@@ -97,51 +97,46 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-/* Publications List Styles */
-.publications-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.publications-list li {
-    margin-bottom: 10px;
-}
-
-.publications-list a {
-    color: #d4a5a5; /* Soft pink for publication links */
-    text-decoration: none;
-}
-
-.publications-list a:hover {
-    color: #a3c1d1; /* Light blue on hover */
-    text-decoration: underline;
-}
-
 /* Publication Styles */
-.publication {
+.publications-container {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px; /* Adjust the gap to spread out the publications */
     margin-bottom: 20px;
 }
 
+.publication {
+    display: flex;
+    align-items: flex-start;
+    width: 100%; /* Ensure the width is consistent */
+    max-width: 800px; /* Limit the maximum width */
+    margin-bottom: 20px; /* Add spacing between publication entries */
+}
+
 .publication-img {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
+    min-width: 200px; /* Fixed width for the image container */
+    max-width: 200px; /* Fixed width for the image container */
+    height: auto; /* Maintain aspect ratio */
     border: 2px solid #d4a5a5; /* Soft pink border */
     border-radius: 10px;
+    object-fit: contain; /* Ensure the entire image is visible */
+    margin-right: 20px; /* Add spacing between image and text */
 }
 
 .publication-details {
-    flex: 1;
+    text-align: left;
+    flex-grow: 1; /* Allow the text container to grow */
 }
 
 .publication-title {
     font-size: 1.2em;
     color: #d4a5a5; /* Soft pink for title */
     text-decoration: none;
+    margin-bottom: 10px; /* Space below the title */
 }
 
-.publication-title:hover {
+.publication-title-link:hover {
     color: #a3c1d1; /* Light blue on hover */
     text-decoration: underline;
 }
@@ -174,7 +169,6 @@ a:hover {
 
     .profile-container {
         display: flex;
-        flex-direction: column;
         align-items: center;
     }
 
@@ -200,4 +194,59 @@ a:hover {
     .publication-details {
         text-align: center;
     }
+}
+
+/* Profile Container Styles */
+.profile-text {
+    flex: 1; /* Allow the text to grow and fill the remaining space */
+}
+
+/* Additional styling for profile name and bio */
+.profile-text h2 {
+    font-size: 1.5em;
+    color: #f2ecec; /* Adjust color as needed */
+}
+
+.profile-text p {
+    color: #eaeaea; /* Adjust color as needed */
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin: 20px auto;
+    max-width: 800px;
+    max-height: 200px;
+
+    padding: 5px;
+    background-color: #1a1a1a; /* Slightly lighter background for sections */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.film-frame {
+    position: relative;
+    width: 300px; /* Set the desired width */
+    height: 400px; /* Set the desired height */
+    background-image: url('assets/film-frame.png'); /* Path to your film frame image */
+    background-size: contain; /* Adjust background size */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure the image does not overflow the container */
+    margin-right: 20px; /* Space between the image and text */
+}
+
+.profile-pic {
+    max-width: 60%; /* Ensure the image scales down if it's too big */
+    max-height: 60%; /* Ensure the image scales down if it's too big */
+    width: auto;
+    height: auto;
+    object-fit: cover; /* Ensure the image covers the area within the frame */
+    border-radius: 10px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }

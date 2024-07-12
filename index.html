@@ -6,74 +6,6 @@
     <title>Nikolaos Athanasiou - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        /* Publication Styles */
-        .publication {
-            display: flex;
-            margin-bottom: 20px;
-            align-items: center;
-        }
-
-        .publication-img {
-            width: 240px; /* Adjust width as needed */
-            height: 135px; /* Maintain 16:9 aspect ratio */
-            margin-right: 20px;
-            border: 2px solid #d4a5a5; /* Soft pink border */
-            border-radius: 10px;
-            object-fit: cover; /* Ensure the image covers the area */
-        }
-
-        .publication-details {
-            flex: 1;
-        }
-
-        .publication-title {
-            font-size: 1.2em;
-            color: #d4a5a5; /* Soft pink for title */
-            text-decoration: none;
-        }
-
-        .publication-title:hover {
-            color: #a3c1d1; /* Light blue on hover */
-            text-decoration: underline;
-        }
-
-        .publication-authors, .publication-conference {
-            color: #a3c1d1; /* Light blue for authors and conference */
-        }
-
-        .publication-links {
-            margin-top: 10px;
-        }
-
-        .publication-link {
-            color: #d4a5a5; /* Soft pink for links */
-            margin-right: 10px;
-            text-decoration: none;
-        }
-
-        .publication-link:hover {
-            color: #a3c1d1; /* Light blue on hover */
-            text-decoration: underline;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .publication {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .publication-img {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-
-            .publication-details {
-                text-align: center;
-            }
-        }
-    </style>
 </head>
 <body>
     <nav>
@@ -87,17 +19,18 @@
     <main>
         <section id="home" class="intro">
             <div class="profile-container">
-                <img src="assets/profile.jpeg" alt="Profile Picture" class="profile-pic">
-                <div class="intro-text">
-                    <h1>Nikolaos Athanasiou</h1>
-                    <p>Ph.D. student at the Max Planck Institute for Intelligent Systems, Perceiving Systems department.</p>
+                <div class="profile-pic">
+                    <img src="assets/profile.jpeg" alt="Profile Picture">
+                </div>
+                <div class="profile-text">
+                    <h2>Nikolaos Athanasiou</h2>
+                    <p>Ph.D. student at the Max Planck Institute for Intelligent Systems, Perceiving Systems department. Supervised by <a href="https://www.is.mpg.de/person/mjblack">Michael J. Black</a> and <a href="https://imagine.enpc.fr/~varolg/">Gül Varol</a>.</p>
                     <p>My research focuses on exploring and analyzing the underlying causes behind human movement, combining language with human movement to understand emotions, goals, and plans in multimodal environments.</p>
                 </div>
             </div>
         </section>
         <section id="research">
             <h2>Research</h2>
-            <p>Supervised by <a href="https://ps.is.mpg.de/person/black" class="research-link">Michael J. Black</a> and <a href="https://www.di.ens.fr/~varol/" class="research-link">Gül Varol</a>, my research aims to understand the intricate details of human movement and its underlying causes.</p>
             <p>Key areas of interest include:</p>
             <ul>
                 <li>Human Movement Analysis</li>
@@ -107,193 +40,298 @@
         </section>
         <section id="publications">
             <h2>Publications</h2>
-            <div class="publication">
-                <img src="assets/paper-teaser/wandr.jpeg" alt="WANDR: Intention-guided Human Motion Generation" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:9yKSN-GCB0IC" class="publication-title">WANDR: Intention-guided Human Motion Generation</a>
-                    <p class="publication-authors">M Diomataris, N Athanasiou, O Taheri, X Wang, O Hilliges, MJ Black</p>
-                    <p class="publication-conference">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2020</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/wandr.jpeg" alt="WANDR: Intention-guided Human Motion Generation">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:9yKSN-GCB0IC" class="publication-title-link">WANDR: Intention-guided Human Motion Generation</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">M Diomataris, N Athanasiou, O Taheri, X Wang, O Hilliges, MJ Black</p>
+                            <p class="publication-conference">CVPR 2024</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/amuse.png" alt="Emotional speech-driven 3D body animation via disentangled latent diffusion" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:UeHWp8X0CEIC" class="publication-title">Emotional speech-driven 3D body animation via disentangled latent diffusion</a>
-                    <p class="publication-authors">K Chhatre, N Athanasiou, G Becherini, C Peters, MJ Black, T Bolkart</p>
-                    <p class="publication-conference">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2020</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/amuse.png" alt="Emotional speech-driven 3D body animation via disentangled latent diffusion">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:UeHWp8X0CEIC" class="publication-title-link">Emotional speech-driven 3D body animation via disentangled latent diffusion</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">K Chhatre, N Athanasiou, G Becherini, C Peters, MJ Black, T Bolkart</p>
+                            <p class="publication-conference">CVPR 2024</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/sinc.png" alt="SINC: Spatial composition of 3D human motions for simultaneous action generation" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">SINC: Spatial composition of 3D human motions for simultaneous action generation</a>
-                    <p class="publication-authors">N Athanasiou, M Petrovich, MJ Black, G Varol</p>
-                    <p class="publication-conference">Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) 2020</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/sinc.png" alt="SINC: Spatial composition of 3D human motions for simultaneous action generation">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">SINC: Spatial composition of 3D human motions for simultaneous action generation</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">N Athanasiou, M Petrovich, MJ Black, G Varol</p>
+                            <p class="publication-conference">ICCV 2023</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/teach.png" alt="TEACH: Temporal Action Composition for 3D Humans" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">TEACH: Temporal Action Composition for 3D Humans</a>
-                    <p class="publication-authors">N Athanasiou, M Petrovich, MJ Black, G Varol</p>
-                    <p class="publication-conference">International Conference on 3D Vision (3DV) 2022</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/teach.png" alt="TEACH: Temporal Action Composition for 3D Humans">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">TEACH: Temporal Action Composition for 3D Humans</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">N Athanasiou, M Petrovich, MJ Black, G Varol</p>
+                            <p class="publication-conference">3DV 2022</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/dsr.png" alt="Learning to regress bodies from images using differentiable semantic rendering" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">Learning to regress bodies from images using differentiable semantic rendering</a>
-                    <p class="publication-authors">SK Dwivedi, N Athanasiou, M Kocabas, MJ Black</p>
-                    <p class="publication-conference">Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) 2020</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/dsr.png" alt="Learning to regress bodies from images using differentiable semantic rendering">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">Learning to regress bodies from images using differentiable semantic rendering</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">SK Dwivedi, N Athanasiou, M Kocabas, MJ Black</p>
+                            <p class="publication-conference">ICCV 2021</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/babel.png" alt="BABEL: Bodies, action and behavior with english labels" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">BABEL: Bodies, action and behavior with english labels</a>
-                    <p class="publication-authors">AR Punnakkal, A Chandrasekaran, N Athanasiou, A Quiros-Ramirez, MJ Black</p>
-                    <p class="publication-conference">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2020</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/babel.png" alt="BABEL: Bodies, action and behavior with English labels">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">BABEL: Bodies, action and behavior with English labels</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">AR Punnakkal, A Chandrasekaran, N Athanasiou, A Quiros-Ramirez, MJ Black</p>
+                            <p class="publication-conference">CVPR 2021</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/vibe.png" alt="VIBE: Video Inference for Human Body Pose and Shape Estimation" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">VIBE: Video Inference for Human Body Pose and Shape Estimation</a>
-                    <p class="publication-authors">M Kocabas, N Athanasiou, MJ Black</p>
-                    <p class="publication-conference">Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2020</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/vibe.png" alt="VIBE: Video Inference for Human Body Pose and Shape Estimation">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">VIBE: Video Inference for Human Body Pose and Shape Estimation</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">M Kocabas, N Athanasiou, MJ Black</p>
+                            <p class="publication-conference">CVPR 2020</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/master-thesis.png" alt="Cognitive and Cross-Topic Methods for Natural Language Representations" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">Cognitive and Cross-Topic Methods for Natural Language Representations</a>
-                    <p class="publication-authors">N Athanasiou</p>
-                    <p class="publication-conference">Master Thesis</p>
-                    <div class="publication-links">
-                        <a href="http://artemis.cslab.ece.ntua.gr:8080/jspui/handle/123456789/17299" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/master-thesis.png" alt="Cognitive and Cross-Topic Methods for Natural Language Representations">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="http://artemis.cslab.ece.ntua.gr:8080/jspui/handle/123456789/17299" class="publication-title-link">Cognitive and Cross-Topic Methods for Natural Language Representations</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">N Athanasiou</p>
+                            <p class="publication-conference">Master Thesis</p>
+                            <div class="publication-links">
+                                <a href="http://artemis.cslab.ece.ntua.gr:8080/jspui/handle/123456789/17299" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/cross-topic.png" alt="Cross-topic distributional semantic representations via unsupervised mappings" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">Cross-topic distributional semantic representations via unsupervised mappings</a>
-                    <p class="publication-authors">E Briakou, N Athanasiou, A Potamianos</p>
-                    <p class="publication-conference">Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL) 2019</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/cross-topic.png" alt="Cross-topic distributional semantic representations via unsupervised mappings">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">Cross-topic distributional semantic representations via unsupervised mappings</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">E Briakou, N Athanasiou, A Potamianos</p>
+                            <p class="publication-conference">NAACL 2019</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/neural_activ.png" alt="Neural activation semantic models: Computational lexical semantic models of localized neural activations" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">Neural activation semantic models: Computational lexical semantic models of localized neural activations</a>
-                    <p class="publication-authors">N Athanasiou, E Iosif, A Potamianos</p>
-                    <p class="publication-conference">Proceedings of the 27th International Conference on Computational Linguistics (COLING) 2018</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/neural_activ.png" alt="Neural activation semantic models: Computational lexical semantic models of localized neural activations">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">Neural activation semantic models: Computational lexical semantic models of localized neural activations</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">N Athanasiou, E Iosif, A Potamianos</p>
+                            <p class="publication-conference">COLING 2018</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/irony2.png" alt="Ntua-slp at semeval-2018 task 3: Tracking ironic tweets using ensembles of word and character level attentive rnns" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">Ntua-slp at semeval-2018 task 3: Tracking ironic tweets using ensembles of word and character level attentive rnns</a>
-                    <p class="publication-authors">C Baziotis, N Athanasiou, P Papalampidi, A Kolovou, G Paraskevopoulos</p>
-                    <p class="publication-conference">arXiv preprint arXiv:1804.06659</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/irony2.png" alt="Ntua-slp at semeval-2018 task 3: Tracking ironic tweets using ensembles of word and character level attentive rnns">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">Ntua-slp at semeval-2018 task 3: Tracking ironic tweets using ensembles of word and character level attentive rnns</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">C Baziotis, N Athanasiou, P Papalampidi, A Kolovou, G Paraskevopoulos</p>
+                            <p class="publication-conference">arXiv preprint arXiv:1804.06659</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/emotion.png" alt="Ntua-slp at semeval-2018 task 1: Predicting affective content in tweets with deep attentive rnns and transfer learning" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">Ntua-slp at semeval-2018 task 1: Predicting affective content in tweets with deep attentive rnns and transfer learning</a>
-                    <p class="publication-authors">C Baziotis, N Athanasiou, A Chronopoulou, A Kolovou</p>
-                    <p class="publication-conference">arXiv preprint arXiv:1804.06658</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/emotion.png" alt="Ntua-slp at semeval-2018 task 1: Predicting affective content in tweets with deep attentive rnns and transfer learning">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">Ntua-slp at semeval-2018 task 1: Predicting affective content in tweets with deep attentive rnns and transfer learning</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">C Baziotis, N Athanasiou, A Chronopoulou, A Kolovou</p>
+                            <p class="publication-conference">arXiv preprint arXiv:1804.06658</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="publication">
-                <img src="assets/paper-teaser/emoji.png" alt="Ntua-slp at semeval-2018 task 2: Predicting emojis using rnns with context-aware attention" class="publication-img">
-                <div class="publication-details">
-                    <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title">Ntua-slp at semeval-2018 task 2: Predicting emojis using rnns with context-aware attention</a>
-                    <p class="publication-authors">C Baziotis, N Athanasiou, G Paraskevopoulos, N Ellinas, A Kolovou</p>
-                    <p class="publication-conference">arXiv preprint arXiv:1804.06657</p>
-                    <div class="publication-links">
-                        <a href="#" class="publication-link">[PDF]</a>
-                        <a href="#" class="publication-link">[arxiv]</a>
-                        <a href="#" class="publication-link">[code]</a>
-                        <a href="#" class="publication-link">[bibtex]</a>
+            <div class="publications-container">
+                <div class="publication">
+                    <div class="publication-img">
+                        <img src="assets/paper-teaser/emoji.png" alt="Ntua-slp at semeval-2018 task 2: Predicting emojis using rnns with context-aware attention">
+                    </div>
+                    <div class="publication-details">
+                        <div class="publication-title">
+                            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=LhlnmyEAAAAJ&citation_for_view=LhlnmyEAAAAJ:2osOgNQ5qMEC" class="publication-title-link">Ntua-slp at semeval-2018 task 2: Predicting emojis using rnns with context-aware attention</a>
+                        </div>
+                        <div class="publication-info">
+                            <p class="publication-authors">C Baziotis, N Athanasiou, G Paraskevopoulos, N Ellinas, A Kolovou</p>
+                            <p class="publication-conference">arXiv preprint arXiv:1804.06657</p>
+                            <div class="publication-links">
+                                <a href="#" class="publication-link">[PDF]</a>
+                                <a href="#" class="publication-link">[arxiv]</a>
+                                <a href="#" class="publication-link">[code]</a>
+                                <a href="#" class="publication-link">[bibtex]</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="contact">
             <h2>Contact Me</h2>
-            <p>You can reach me via email at <a href="mailto:nathanasiou@is.mpg.de" class="email-link">nathanasiou@is.mpg.de</a>.</p>
+            <p>You can reach me via email at <a href="mailto:nathanasiou@is.mpg.de" class="email-link">athn.nik@gmail.com</a>.</p>
         </section>
     </main>
 </body>
 </html>
+
