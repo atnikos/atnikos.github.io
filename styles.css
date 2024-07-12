@@ -73,10 +73,9 @@ a:hover {
 
 /* Profile Picture Styles */
 .profile-pic {
-    width: 120px; /* Smaller size */
+    width: 60%; /* Adjust size */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Slightly rounded corners */
-    margin-right: 1.5rem;
     border: 2px solid #d4a5a5; /* Soft pink border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
