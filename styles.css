@@ -8,25 +8,15 @@ body {
     color: #e0e0e0; /* Light text color */
 }
 
-header {
-    background-color: #1a1a1a;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
+/* Navigation Styles */
 nav ul {
-    list-style: none;
-    padding: 1rem;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Center navigation items */
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin-right: 20px;
 }
 
@@ -41,30 +31,47 @@ nav ul li a:hover {
     text-decoration: underline; /* Optional: Add underline on hover */
 }
 
-main {
-    padding-top: 5rem;
-    text-align: center;
-    padding: 2rem 1rem;
+/* Section Styles */
+h1, h2 {
+    color: #d4a5a5; /* Soft pink for headings */
 }
 
-.intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 2rem;
+.intro-text p, .profile-container p {
+    color: #a3c1d1; /* Light blue for paragraphs */
 }
 
-.profile-container {
-    display: flex;
-    align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    background: #1a1a1a;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Link Styles */
+a {
+    color: #d4a5a5; /* Soft pink for links */
+    text-decoration: none; /* Remove underline */
 }
 
+a:hover {
+    color: #a3c1d1; /* Light blue on hover */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Research Link Styles */
+.research-link {
+    color: #d4a5a5; /* Soft pink for research links */
+}
+
+.research-link:hover {
+    color: #a3c1d1; /* Light blue on hover */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Email Link Styles */
+.email-link {
+    color: #d4a5a5 !important; /* Soft pink for email link */
+}
+
+.email-link:hover {
+    color: #a3c1d1 !important; /* Light blue on hover */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Profile Picture Styles */
 .profile-pic {
     width: 120px; /* Smaller size */
     height: auto; /* Maintain aspect ratio */
@@ -80,45 +87,35 @@ main {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
-.intro-text {
-    text-align: left;
+/* Section Container Styles */
+.profile-container, .intro, #research, #contact {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #1a1a1a; /* Slightly lighter background for sections */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    color: #d4a5a5; /* Soft pink for headings */
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 
-p {
-    font-size: 1.2rem;
-    color: #a3c1d1; /* Light blue for paragraphs */
-}
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-section {
-    margin: 3rem 0;
-}
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #d4a5a5; /* Soft pink for headings */
-}
-
-footer {
-    background-color: #1a1a1a;
-    padding: 1rem 0;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    color: #e0e0e0;
-}
-
-/* Email Link Styles */
-.email-link {
-    color: #d4a5a5 !important; /* Soft pink for email link */
-}
-
-.email-link:hover {
-    color: #a3c1d1 !important; /* Light blue on hover */
-    text-decoration: underline; /* Optional: Add underline on hover */
+    .intro-text {
+        text-align: center;
+    }
 }
