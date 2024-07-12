@@ -114,8 +114,7 @@ a:hover {
 }
 
 .publication-img {
-    min-width: 200px; /* Fixed width for the image container */
-    max-width: 200px; /* Fixed width for the image container */
+    width: 200px; /* Fixed width for the image container */
     height: auto; /* Maintain aspect ratio */
     border: 2px solid #d4a5a5; /* Soft pink border */
     border-radius: 10px;
