@@ -114,7 +114,8 @@ a:hover {
 }
 
 .publication-img {
-    width: 200px; /* Fixed width for the image container */
+    min-width: 200px; /* Fixed width for the image container */
+    max-width: 200px; /* Fixed width for the image container */
     height: auto; /* Maintain aspect ratio */
     border: 2px solid #d4a5a5; /* Soft pink border */
     border-radius: 10px;
@@ -125,6 +126,7 @@ a:hover {
 .publication-details {
     text-align: left;
     flex-grow: 1; /* Allow the text container to grow */
+    overflow: hidden; /* Prevent text overflow */
 }
 
 .publication-title {
@@ -156,6 +158,34 @@ a:hover {
 .publication-link:hover {
     color: #a3c1d1; /* Light blue on hover */
     text-decoration: underline;
+}
+
+/* Profile Styles */
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Add spacing below the profile section */
+}
+
+.profile-pic {
+    width: 120px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Add spacing between the picture and text */
+}
+
+.profile-text {
+    flex: 1; /* Allow the text to grow and fill the remaining space */
+}
+
+/* Additional styling for profile name, bio, and supervisors */
+.profile-text h2 {
+    font-size: 1.5em;
+    color: #333; /* Adjust color as needed */
+}
+
+.profile-text p {
+    color: #666; /* Adjust color as needed */
+    margin-bottom: 10px; /* Add spacing between paragraphs */
 }
 
 /* Responsive Styles */
@@ -199,34 +229,32 @@ a:hover {
         text-align: center;
     }
 }
+/* Profile Styles */
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Add spacing below the profile section */
+}
 
-/* Profile Container Styles */
+.profile-pic {
+    width: 120px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Add spacing between the picture and text */
+}
+
 .profile-text {
     flex: 1; /* Allow the text to grow and fill the remaining space */
 }
 
-/* Additional styling for profile name and bio */
+/* Additional styling for profile name, bio, and supervisors */
 .profile-text h2 {
     font-size: 1.5em;
-    color: #f2ecec; /* Adjust color as needed */
+    color: #333; /* Adjust color as needed */
 }
 
 .profile-text p {
-    color: #eaeaea; /* Adjust color as needed */
-}
-
-.profile-container {
-    display: flex;
-    flex-direction: row; /* Arrange items in a row */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    margin: 20px auto;
-    max-width: 800px;
-    max-height: 200px;
-    padding: 5px;
-    background-color: #1a1a1a; /* Slightly lighter background for sections */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: #666; /* Adjust color as needed */
+    margin-bottom: 10px; /* Add spacing between paragraphs */
 }
 
 .film-frame {
