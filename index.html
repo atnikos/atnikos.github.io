@@ -6,6 +6,74 @@
     <title>Nikolaos Athanasiou - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Publication Styles */
+        .publication {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .publication-img {
+            width: 240px; /* Adjust width as needed */
+            height: 135px; /* Maintain 16:9 aspect ratio */
+            margin-right: 20px;
+            border: 2px solid #d4a5a5; /* Soft pink border */
+            border-radius: 10px;
+            object-fit: cover; /* Ensure the image covers the area */
+        }
+
+        .publication-details {
+            flex: 1;
+        }
+
+        .publication-title {
+            font-size: 1.2em;
+            color: #d4a5a5; /* Soft pink for title */
+            text-decoration: none;
+        }
+
+        .publication-title:hover {
+            color: #a3c1d1; /* Light blue on hover */
+            text-decoration: underline;
+        }
+
+        .publication-authors, .publication-conference {
+            color: #a3c1d1; /* Light blue for authors and conference */
+        }
+
+        .publication-links {
+            margin-top: 10px;
+        }
+
+        .publication-link {
+            color: #d4a5a5; /* Soft pink for links */
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .publication-link:hover {
+            color: #a3c1d1; /* Light blue on hover */
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .publication {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .publication-img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .publication-details {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
