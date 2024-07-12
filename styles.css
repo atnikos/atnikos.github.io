@@ -88,13 +88,81 @@ a:hover {
 }
 
 /* Section Container Styles */
-.profile-container, .intro, #research, #contact {
+.profile-container, .intro, #research, #publications, #contact {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
     background-color: #1a1a1a; /* Slightly lighter background for sections */
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Publications List Styles */
+.publications-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.publications-list li {
+    margin-bottom: 10px;
+}
+
+.publications-list a {
+    color: #d4a5a5; /* Soft pink for publication links */
+    text-decoration: none;
+}
+
+.publications-list a:hover {
+    color: #a3c1d1; /* Light blue on hover */
+    text-decoration: underline;
+}
+
+/* Publication Styles */
+.publication {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.publication-img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border: 2px solid #d4a5a5; /* Soft pink border */
+    border-radius: 10px;
+}
+
+.publication-details {
+    flex: 1;
+}
+
+.publication-title {
+    font-size: 1.2em;
+    color: #d4a5a5; /* Soft pink for title */
+    text-decoration: none;
+}
+
+.publication-title:hover {
+    color: #a3c1d1; /* Light blue on hover */
+    text-decoration: underline;
+}
+
+.publication-authors, .publication-conference {
+    color: #a3c1d1; /* Light blue for authors and conference */
+}
+
+.publication-links {
+    margin-top: 10px;
+}
+
+.publication-link {
+    color: #d4a5a5; /* Soft pink for links */
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.publication-link:hover {
+    color: #a3c1d1; /* Light blue on hover */
+    text-decoration: underline;
 }
 
 /* Responsive Styles */
@@ -116,6 +184,20 @@ a:hover {
     }
 
     .intro-text {
+        text-align: center;
+    }
+
+    .publication {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .publication-img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .publication-details {
         text-align: center;
     }
 }
