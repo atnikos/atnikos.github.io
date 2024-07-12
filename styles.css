@@ -114,8 +114,6 @@ a:hover {
 }
 
 .publication-img {
-    min-width: 200px; /* Fixed width for the image container */
-    max-width: 200px; /* Fixed width for the image container */
     height: auto; /* Maintain aspect ratio */
     border: 2px solid #d4a5a5; /* Soft pink border */
     border-radius: 10px;
@@ -257,20 +255,6 @@ a:hover {
     margin-bottom: 10px; /* Add spacing between paragraphs */
 }
 
-.film-frame {
-    position: relative;
-    width: 300px; /* Set the desired width */
-    height: 400px; /* Set the desired height */
-    background-image: url('assets/mqdefault.jpg'); /* Path to your film frame image */
-    background-size: contain; /* Adjust background size */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Ensure the image does not overflow the container */
-    margin-right: 20px; /* Space between the image and text */
-}
 
 .profile-pic {
     max-width: 60%; /* Ensure the image scales down if it's too big */
