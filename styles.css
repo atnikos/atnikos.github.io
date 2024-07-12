@@ -261,7 +261,7 @@ a:hover {
     position: relative;
     width: 300px; /* Set the desired width */
     height: 400px; /* Set the desired height */
-    background-image: url('assets/film-frame.png'); /* Path to your film frame image */
+    background-image: url('assets/mqdefault.jpg'); /* Path to your film frame image */
     background-size: contain; /* Adjust background size */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-position: center;
