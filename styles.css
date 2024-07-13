@@ -9,26 +9,33 @@ body {
 }
 
 /* Navigation Styles */
+nav {
+    background-color: #000000; /* Background color for the navigation bar */
+    padding: 20px; /* Increase padding to make the menu bigger */
+}
+
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* Remove default list styling */
+    margin: 0;
     padding: 0;
-    text-align: center; /* Center navigation items */
+    display: flex;
+    justify-content: space-around; /* Distribute menu items evenly */
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+    display: inline;
 }
 
 nav ul li a {
-    color: #d4a5a5; /* Soft pink for links */
-    text-decoration: none; /* Remove underline */
-    font-weight: 400; /* Slightly bolder for navigation */
+    color: #d4a5a5; /* Text color for menu items */
+    text-decoration: none;
+    font-size: 1.2em; /* Increase font size for menu items */
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
-    color: #a3c1d1; /* Light blue on hover */
-    text-decoration: underline; /* Optional: Add underline on hover */
+    background-color: #555; /* Background color on hover */
 }
 
 /* Section Styles */
@@ -77,13 +84,13 @@ a:hover {
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Slightly rounded corners */
     border: 2px solid #d4a5a5; /* Soft pink border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75); /* Subtle shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .profile-pic:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75); /* Enhanced shadow on hover */
 }
 
 /* Section Container Styles */
@@ -93,7 +100,7 @@ a:hover {
     max-width: 800px;
     background-color: #1a1a1a; /* Slightly lighter background for sections */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75); /* Subtle shadow for depth */
 }
 
 /* Publication Styles */
@@ -114,9 +121,11 @@ a:hover {
 }
 
 .publication-img {
-    height: auto; /* Maintain aspect ratio */
+    /* min-width: 200px; Fixed width for the image container */
+    /* max-width: 200px; Fixed width for the image container */
+    /* height: auto; Maintain aspect ratio */
     border: 2px solid #d4a5a5; /* Soft pink border */
-    border-radius: 10px;
+    border-radius: 10px; /* Rounded corners */
     object-fit: contain; /* Ensure the entire image is visible */
     margin-right: 20px; /* Add spacing between image and text */
 }
@@ -169,6 +178,8 @@ a:hover {
     width: 120px; /* Adjust size as needed */
     height: auto; /* Maintain aspect ratio */
     margin-right: 20px; /* Add spacing between the picture and text */
+    border-radius: 50%; /* Rounded corners for profile picture */
+    object-fit: cover; /* Ensure the entire image is visible */
 }
 
 .profile-text {
@@ -227,41 +238,39 @@ a:hover {
         text-align: center;
     }
 }
-/* Profile Styles */
-.profile-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px; /* Add spacing below the profile section */
+
+.news-section {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+    font-size: 0.8em;
 }
 
-.profile-pic {
-    width: 120px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Add spacing between the picture and text */
+.news-section h2 {
+    text-align: left;
+    color: #d4a5a5;
 }
 
-.profile-text {
-    flex: 1; /* Allow the text to grow and fill the remaining space */
+.news-item {
+    border-bottom: 1px #ddd;
+    /* padding: 10px 0; */
 }
 
-/* Additional styling for profile name, bio, and supervisors */
-.profile-text h2 {
-    font-size: 1.5em;
-    color: #333; /* Adjust color as needed */
+.news-item h3 {
+    color: #d4a5a5;
 }
 
-.profile-text p {
-    color: #666; /* Adjust color as needed */
-    margin-bottom: 10px; /* Add spacing between paragraphs */
+.news-item p {
+    color: #d4a5a5;
 }
 
+.news-item a {
+    color: #007BFF;
+    text-decoration: none;
+}
 
-.profile-pic {
-    max-width: 60%; /* Ensure the image scales down if it's too big */
-    max-height: 60%; /* Ensure the image scales down if it's too big */
-    width: auto;
-    height: auto;
-    object-fit: cover; /* Ensure the image covers the area within the frame */
-    border-radius: 10px; /* Slightly rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+.news-item a:hover {
+    text-decoration: underline;
 }
