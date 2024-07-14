@@ -94,7 +94,7 @@ a:hover {
 }
 
 /* Section Container Styles */
-.profile-container, .intro, #research, #publications, #contact {
+.profile-container, .intro, #research, #publications, #contact, .news-section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
@@ -240,7 +240,7 @@ a:hover {
 }
 
 .news-section {
-    width: 100%;
+    /* width: 100%; */
     margin: 20px auto;
     padding: 20px;
     background-color: #1a1a1a;
