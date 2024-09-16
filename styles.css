@@ -130,6 +130,16 @@ a:hover {
     margin-right: 20px; /* Add spacing between image and text */
 }
 
+.publication-gif {
+    min-width: 200px;
+    max-width: 200px;
+    /* height: auto; Maintain aspect ratio */
+    border: 2px solid #d4a5a5; /* Soft pink border */
+    border-radius: 10px; /* Rounded corners */
+    object-fit: contain; /* Ensure the entire image is visible */
+    margin-right: 20px; /* Add spacing between image and text */
+}
+
 .publication-details {
     text-align: left;
     flex-grow: 1; /* Allow the text container to grow */
