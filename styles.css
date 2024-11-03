@@ -130,6 +130,10 @@ a:hover {
     border-radius: 10px; /* Rounded corners */
     object-fit: contain; /* Ensure the entire image is visible */
     margin-right: 20px; /* Add spacing between image and text */
+    object-fit: cover;  /* This crops the image to fit the container */
+    overflow: hidden; /* Ensures anything overflowing is hidden */
+    height: auto; /* Let the height adjust based on the image */
+
 }
 
 .publication-gif {
@@ -242,8 +246,14 @@ a:hover {
     }
 
     .publication-img {
-        margin-right: 0;
         margin-bottom: 10px;
+        border: 3px solid #d4a5a5; /* Soft pink border */
+        border-radius: 15px; /* Rounded corners */
+        object-fit: contain; /* Ensure the entire image is visible */
+        margin-right: 20px; /* Add spacing between image and text */
+        object-fit: cover;  /* This crops the image to fit the container */
+        overflow: hidden; /* Ensures anything overflowing is hidden */
+
     }
 
     .publication-details {
