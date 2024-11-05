@@ -4,7 +4,7 @@ body {
     font-weight: 400; /* Lighter weight */
     margin: 0;
     padding: 0;
-    transform: scale(1.2);
+    transform: scale(1.0);
     transform-origin: 0 0;
     background-color: #0d0d0d; /* Dark background */
     color: #e0e0e0; /* Light text color */
