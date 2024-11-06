@@ -1,16 +1,40 @@
+/* Default Theme Variables (Dark Mode) */
+:root {
+    --background-color: #0d0d0d;
+    --text-color: #e0e0e0;
+    --nav-bg-color: #000000;
+    --link-color: #d4a5a5;
+    --link-hover-color: #a3c1d1;
+    --section-bg-color: #1a1a1a;
+    --border-color: #333333;
+    --news-date-color: #ffa500;
+}
+
+/* Light Theme Overrides */
+.light-theme {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --nav-bg-color: #f0f0f0;
+    --link-color: #2d59eb;
+    --link-hover-color: #af19bf;
+    --section-bg-color: #f5f5f5;
+    --border-color: #cccccc;
+    --news-date-color: #ff6347; /* Warm accent for dates */
+}
+
 /* General Styles */
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     margin: 0;
     padding: 0;
-    background-color: #0d0d0d; /* Dark background */
-    color: #e0e0e0; /* Light text color */
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 /* Navigation Styles */
 nav {
-    background-color: #000000;
+    background-color: var(--nav-bg-color);
     padding: 20px;
 }
 
@@ -23,7 +47,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: #d4a5a5;
+    color: var(--link-color);
     text-decoration: none;
     font-size: 1.2em;
     padding: 10px 20px;
@@ -36,65 +60,96 @@ nav ul li a:hover {
 
 /* Section Styles */
 h1, h2 {
-    color: #d4a5a5;
+    color: var(--link-color);
 }
 
 .intro-text p, .profile-container p {
-    color: #a3c1d1;
+    color: var(--text-color);
 }
 
 /* Link Styles */
 a {
-    color: #d4a5a5;
+    color: var(--link-color);
     text-decoration: none;
 }
 
 a:hover {
-    color: #a3c1d1;
+    color: var(--link-hover-color);
     text-decoration: underline;
 }
 
 /* Research Link Styles */
-.research-link {
-    color: #d4a5a5;
+.research-link, .email-link {
+    color: var(--link-color);
 }
 
-.research-link:hover {
-    color: #a3c1d1;
-    text-decoration: underline;
-}
-
-/* Email Link Styles */
-.email-link {
-    color: #d4a5a5 !important;
-}
-
-.email-link:hover {
-    color: #a3c1d1 !important;
+.research-link:hover, .email-link:hover {
+    color: var(--link-hover-color);
     text-decoration: underline;
 }
 
 /* Profile Picture Styles */
-.profile-pic {
-    width: 60%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid #d4a5a5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Profile Container Styles */
+.profile-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 20px; /* Space between the image and the text */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Center the container */
+}
+/* Profile Image and Icon Links Container */
+.profile-image-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align image and icons */
+    margin-right: 20px; /* Space between image+icons and text */
 }
 
+/* Icon Links styling */
+.icon-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between icons */
+    margin-top: 10px; /* Add extra space between image and icons */
+}
+
+.icon-links a {
+    color: #d4a5a5; /* Color for icons */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.icon-links a:hover {
+    color: #a3c1d1; /* Change color on hover */
+}
+/* Profile Picture Styles */
+.profile-pic {
+    width: 120px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Slightly rounded corners, adjust or remove for a true rectangle */
+    border: 2px solid #d4a5a5; /* Soft pink border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75); /* Subtle shadow */
+    object-fit: cover;
+    margin-bottom: 15px; /* Space between image and icons */
+
+}
+
+/* Intro Text Styles */
+.intro-text {
+    flex: 1; /* Allows the text to take up remaining space */
+}
 .profile-pic:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75);
 }
 
 /* Section Container Styles */
-.profile-container, .intro, #research, #publications, #contact, .news-section {
+.intro, #research, #publications, #contact, .news-section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    background-color: #1a1a1a;
+    background-color: var(--section-bg-color);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
 }
@@ -117,13 +172,12 @@ a:hover {
 }
 
 .publication-img, .publication-gif {
-    max-width: 100%; /* Allows the image to adjust to its natural size within the container */
-    height: auto; /* Maintains the aspect ratio */
-    border: 2px solid #d4a5a5; /* Soft pink border */
-    border-radius: 10px; /* Rounded corners */
-    object-fit: contain; /* Ensures the entire image is visible */
-    margin-right: 20px; /* Add spacing between image and text */
-    /* overflow: hidden; */
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--link-color);
+    border-radius: 10px;
+    object-fit: contain;
+    margin-right: 20px;
 }
 
 .publication-details {
@@ -134,17 +188,17 @@ a:hover {
 
 .publication-title {
     font-size: 1.2em;
-    color: #d4a5a5;
+    color: var(--link-color);
     margin-bottom: 10px;
 }
 
 .publication-title-link:hover {
-    color: #a3c1d1;
+    color: var(--link-hover-color);
     text-decoration: underline;
 }
 
 .publication-authors, .publication-conference {
-    color: #a3c1d1;
+    color: var(--text-color);
 }
 
 .publication-links {
@@ -152,44 +206,78 @@ a:hover {
 }
 
 .publication-link {
-    color: #d4a5a5;
+    color: var(--link-color);
     margin-right: 10px;
     text-decoration: none;
 }
 
 .publication-link:hover {
-    color: #a3c1d1;
+    color: var(--link-hover-color);
     text-decoration: underline;
 }
 
-/* Profile Styles */
-.profile-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+/* News Section */
+.news-section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: var(--section-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+    color: var(--text-color);
 }
 
-.profile-pic {
-    width: 120px;
-    height: auto;
-    margin-right: 20px;
-    border-radius: 50%;
-    object-fit: cover;
+.news-section h2 {
+    font-size: 1.8em;
+    text-align: center;
+    color: var(--link-color);
+    margin-bottom: 15px;
 }
 
-.profile-text {
-    flex: 1;
+/* Scrollable News Box */
+.news-scroll-box {
+    height: 200px;
+    overflow-y: auto;
+    background-color: var(--background-color);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
 
-/* Additional styling for profile name, bio, and supervisors */
-.profile-text h2 {
-    font-size: 1.5em;
-    color: #333;
+/* News Items */
+.news-scroll-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.profile-text p {
-    color: #666;
-    margin-bottom: 10px;
+.news-scroll-box li {
+    font-size: 1em;
+    color: var(--text-color);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-scroll-box li:last-child {
+    border-bottom: none;
+}
+
+/* News Item Links */
+.news-link {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.news-link:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* Date Styling */
+.news-date {
+    font-weight: bold;
+    color: var(--news-date-color);
+    margin-right: 5px;
 }
 
 /* Responsive Styles */
@@ -221,7 +309,7 @@ a:hover {
 
     .publication-img {
         margin-bottom: 10px;
-        border: 3px solid #d4a5a5;
+        border: 3px solid var(--link-color);
         border-radius: 15px;
     }
 
@@ -229,66 +317,25 @@ a:hover {
         text-align: center;
     }
 }
-/* News Section */
-.news-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: #1a1a1a; /* Slightly lighter dark background */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
-    color: #e0e0e0; /* Light text color */
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #d4a5a5; /* Match with your theme */
+    transition: color 0.3s ease;
 }
 
-.news-section h2 {
-    font-size: 1.8em;
-    text-align: center;
-    color: #d4a5a5; /* Soft pink color for headings */
-    margin-bottom: 15px;
+#theme-toggle:hover {
+    color: #a3c1d1; /* Slight color change on hover */
 }
 
-/* Scrollable News Box */
-.news-scroll-box {
-    height: 200px; /* Adjust as needed */
-    overflow-y: auto;
-    background-color: #0d0d0d; /* Darker background to match the main theme */
-    padding: 10px;
-    border: 1px solid #333333;
-    border-radius: 8px;
+.light-theme #theme-toggle #theme-icon {
+    content: "☀️";
 }
 
-/* News Items */
-.news-scroll-box ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.news-scroll-box li {
-    font-size: 1em;
-    color: #a3c1d1; /* Light blue for text color to match paragraph text */
-    padding: 10px 0; /* Space between each news item */
-    border-bottom: 1px solid #333333; /* Subtle separator line between items */
-}
-
-.news-scroll-box li:last-child {
-    border-bottom: none; /* Remove border from last item */
-}
-
-/* News Item Links */
-.news-link {
-    color: #d4a5a5; /* Soft pink to match links */
-    text-decoration: none;
-}
-
-.news-link:hover {
-    color: #a3c1d1; /* Light blue on hover to match other links */
-    text-decoration: underline;
-}
-
-/* Date Styling */
-.news-date {
-    font-weight: bold;
-    color: #ffa500; /* Accent color for dates */
-    margin-right: 5px;
+#theme-toggle #theme-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
 }

@@ -50,35 +50,39 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav> -->
+    <!-- Toggle Theme Button -->
+    <button id="theme-toggle" aria-label="Toggle dark/light mode">
+        <span id="theme-icon">🌙</span>
+    </button>
     <main>
         <section id="home" class="intro">
-            <div class="profile-container">
-                <img src="assets/20240715_Athanasiou_Nikos_2.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="intro-text">
-                    <h1>Nikos Athanasiou</h1>
-                        <!-- <a class="far fa-envelope" href="mailto:vassilis.choutas@tuebingen.mpg.de">Email</a> &nbsp/&nbsp -->
-                        <a class="fa fa-envelope fa-2x" href="mailto:athn.nik@gmail.com"></a>
-                        <!-- <a href="data/JonBarron-CV.pdf">CV</a> &nbsp/&nbsp -->
-                        <!-- <a href="data/JonBarron-bio.txt">Biography</a> &nbsp/&nbsp -->
-                        <!-- <a href="https://scholar.google.com/citations?user=9hk7seYAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp -->
-                        <a class="ai ai-google-scholar ai-2x"
-                          href="https://scholar.google.com/citations?user=LhlnmyEAAAAJ&hl=en"></a>
-                        <!-- <a href="#" class="fa fa-twitter"></a><a href="https://twitter.com/vchoutas1">Twitter</a>&nbsp/&nbsp -->
-                        <a class="fa fa-twitter fa-2x" href="https://x.com/_nikos_athan"></a>
-                        <a class="fa fa-github fa-2x" href="http://github.com/atnikos/"></a>
+
+                <div class="profile-container">
+                    <!-- Container for Image and Icons -->
+                    <div class="profile-image-icons">
+                        <h1>Nikos Athanasiou</h1>
+                    
+                        <img src="assets/20240715_Athanasiou_Nikos_2.jpg" alt="Profile Picture" class="profile-pic">
+                        <div class="icon-links">
+                            <a class="fa fa-envelope fa-2x" href="mailto:athn.nik@gmail.com"></a>
+                            <a class="ai ai-google-scholar ai-2x" href="https://scholar.google.com/citations?user=LhlnmyEAAAAJ&hl=en"></a>
+                            <a class="fa fa-twitter fa-2x" href="https://x.com/_nikos_athan"></a>
+                            <a class="fa fa-github fa-2x" href="http://github.com/atnikos/"></a>
+                        </div>
+                    </div>
+
+                    <div class="intro-text">
+
                     
                     <p>Ph.D. student at the Max Planck Institute for Intelligent 
-                        Systems, Perceiving Systems department.</p>
-                    <p>My research focuses on exploring and analyzing the 
+                        Systems, Perceiving Systems department. My Ph.D. research 
+                        focuses on exploring and analyzing the 
                         underlying causes behind human movement, 
-                        combining language with human movement to 
-                        understand emotions, goals, and plans in 
-                        multimodal environments.</p>
-                    <p>Supervised by <a href="https://ps.is.mpg.de/person/black" 
+                        combining language with human movement to generate and 
+                        control 3D human motions. 
+                        I am lucky to be supervised by <a href="https://ps.is.mpg.de/person/black" 
                         class="research-link">Michael J. Black</a> and 
-                        <a href="https://www.di.ens.fr/~varol/" class="research-link">Gül Varol</a>, 
-                        my research aims to understand the intricate details 
-                        of human movement, to generate it from text instructions.
+                        <a href="https://www.di.ens.fr/~varol/" class="research-link">Gül Varol</a>.
                     </p>
                     <p>Before that I did my BS & MEng. (Diploma) at 
                         <a href="https://www.ece.ntua.gr/en"> ECE, NTUA</a> in 
@@ -87,8 +91,6 @@
                         Speech and Language Processing group</a> under the 
                         supervision of <a href="https://slp-ntua.github.io/potam/"> 
                         Alexandros Potamianos</a>. 
-                    </p>
-                    <p>
                         I also worked for a while at 
                         <a href="https://deeplab.ai">Deeplab</a>, during its 
                         early stages, with a wonderful team of people.
@@ -494,5 +496,16 @@
             </p>
         </section>
     </main>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+        
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            themeIcon.textContent = body.classList.contains('light-theme') ? '☀️' : '🌙';
+        });
+    </script>
+
 </body>
 </html>
