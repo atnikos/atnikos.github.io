@@ -1,98 +1,92 @@
 /* General Styles */
 body {
     font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400; /* Lighter weight */
+    font-weight: 400;
     margin: 0;
     padding: 0;
-    transform: scale(1.0);
-    transform-origin: 0 0;
     background-color: #0d0d0d; /* Dark background */
     color: #e0e0e0; /* Light text color */
 }
 
 /* Navigation Styles */
 nav {
-    background-color: #000000; /* Background color for the navigation bar */
-    padding: 20px; /* Increase padding to make the menu bigger */
+    background-color: #000000;
+    padding: 20px;
 }
 
 nav ul {
-    list-style-type: none; /* Remove default list styling */
+    list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: space-around; /* Distribute menu items evenly */
-}
-
-nav ul li {
-    display: inline;
+    justify-content: space-around;
 }
 
 nav ul li a {
-    color: #d4a5a5; /* Text color for menu items */
+    color: #d4a5a5;
     text-decoration: none;
-    font-size: 1.2em; /* Increase font size for menu items */
+    font-size: 1.2em;
     padding: 10px 20px;
     border-radius: 5px;
 }
 
 nav ul li a:hover {
-    background-color: #555; /* Background color on hover */
+    background-color: #555;
 }
 
 /* Section Styles */
 h1, h2 {
-    color: #d4a5a5; /* Soft pink for headings */
+    color: #d4a5a5;
 }
 
 .intro-text p, .profile-container p {
-    color: #a3c1d1; /* Light blue for paragraphs */
+    color: #a3c1d1;
 }
 
 /* Link Styles */
 a {
-    color: #d4a5a5; /* Soft pink for links */
-    text-decoration: none; /* Remove underline */
+    color: #d4a5a5;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #a3c1d1; /* Light blue on hover */
-    text-decoration: underline; /* Optional: Add underline on hover */
+    color: #a3c1d1;
+    text-decoration: underline;
 }
 
 /* Research Link Styles */
 .research-link {
-    color: #d4a5a5; /* Soft pink for research links */
+    color: #d4a5a5;
 }
 
 .research-link:hover {
-    color: #a3c1d1; /* Light blue on hover */
-    text-decoration: underline; /* Optional: Add underline on hover */
+    color: #a3c1d1;
+    text-decoration: underline;
 }
 
 /* Email Link Styles */
 .email-link {
-    color: #d4a5a5 !important; /* Soft pink for email link */
+    color: #d4a5a5 !important;
 }
 
 .email-link:hover {
-    color: #a3c1d1 !important; /* Light blue on hover */
-    text-decoration: underline; /* Optional: Add underline on hover */
+    color: #a3c1d1 !important;
+    text-decoration: underline;
 }
 
 /* Profile Picture Styles */
 .profile-pic {
-    width: 60%; /* Adjust size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Slightly rounded corners */
-    border: 2px solid #d4a5a5; /* Soft pink border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #d4a5a5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-pic:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75); /* Enhanced shadow on hover */
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75);
 }
 
 /* Section Container Styles */
@@ -100,9 +94,9 @@ a:hover {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    background-color: #1a1a1a; /* Slightly lighter background for sections */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75); /* Subtle shadow for depth */
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
 }
 
 /* Publication Styles */
@@ -110,62 +104,47 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px; /* Adjust the gap to spread out the publications */
+    gap: 30px;
     margin-bottom: 20px;
 }
 
 .publication {
     display: flex;
     align-items: flex-start;
-    width: 100%; /* Ensure the width is consistent */
-    max-width: 800px; /* Limit the maximum width */
-    margin-bottom: 20px; /* Add spacing between publication entries */
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
 }
 
-.publication-img {
-    /* min-width: 200px; Fixed width for the image container */
-    /* max-width: 200px; Fixed width for the image container */
-    /* height: auto; Maintain aspect ratio */
+.publication-img, .publication-gif {
+    max-width: 100%; /* Allows the image to adjust to its natural size within the container */
+    height: auto; /* Maintains the aspect ratio */
     border: 2px solid #d4a5a5; /* Soft pink border */
     border-radius: 10px; /* Rounded corners */
-    object-fit: contain; /* Ensure the entire image is visible */
+    object-fit: contain; /* Ensures the entire image is visible */
     margin-right: 20px; /* Add spacing between image and text */
-    object-fit: cover;  /* This crops the image to fit the container */
-    overflow: hidden; /* Ensures anything overflowing is hidden */
-    height: auto; /* Let the height adjust based on the image */
-
-}
-
-.publication-gif {
-    min-width: 200px;
-    max-width: 200px;
-    /* height: auto; Maintain aspect ratio */
-    border: 2px solid #d4a5a5; /* Soft pink border */
-    border-radius: 10px; /* Rounded corners */
-    object-fit: contain; /* Ensure the entire image is visible */
-    margin-right: 20px; /* Add spacing between image and text */
+    /* overflow: hidden; */
 }
 
 .publication-details {
     text-align: left;
-    flex-grow: 1; /* Allow the text container to grow */
-    overflow: hidden; /* Prevent text overflow */
+    flex-grow: 1;
+    overflow: hidden;
 }
 
 .publication-title {
     font-size: 1.2em;
-    color: #d4a5a5; /* Soft pink for title */
-    text-decoration: none;
-    margin-bottom: 10px; /* Space below the title */
+    color: #d4a5a5;
+    margin-bottom: 10px;
 }
 
 .publication-title-link:hover {
-    color: #a3c1d1; /* Light blue on hover */
+    color: #a3c1d1;
     text-decoration: underline;
 }
 
 .publication-authors, .publication-conference {
-    color: #a3c1d1; /* Light blue for authors and conference */
+    color: #a3c1d1;
 }
 
 .publication-links {
@@ -173,13 +152,13 @@ a:hover {
 }
 
 .publication-link {
-    color: #d4a5a5; /* Soft pink for links */
+    color: #d4a5a5;
     margin-right: 10px;
     text-decoration: none;
 }
 
 .publication-link:hover {
-    color: #a3c1d1; /* Light blue on hover */
+    color: #a3c1d1;
     text-decoration: underline;
 }
 
@@ -187,30 +166,30 @@ a:hover {
 .profile-container {
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* Add spacing below the profile section */
+    margin-bottom: 20px;
 }
 
 .profile-pic {
-    width: 120px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Add spacing between the picture and text */
-    border-radius: 50%; /* Rounded corners for profile picture */
-    object-fit: cover; /* Ensure the entire image is visible */
+    width: 120px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .profile-text {
-    flex: 1; /* Allow the text to grow and fill the remaining space */
+    flex: 1;
 }
 
 /* Additional styling for profile name, bio, and supervisors */
 .profile-text h2 {
     font-size: 1.5em;
-    color: #333; /* Adjust color as needed */
+    color: #333;
 }
 
 .profile-text p {
-    color: #666; /* Adjust color as needed */
-    margin-bottom: 10px; /* Add spacing between paragraphs */
+    color: #666;
+    margin-bottom: 10px;
 }
 
 /* Responsive Styles */
@@ -226,14 +205,9 @@ a:hover {
         align-items: center;
     }
 
-    .film-frame {
-        width: 80%; /* Adjust width for smaller screens */
-        height: auto;
-    }
-
     .profile-pic {
-        max-width: 100%; /* Ensure the image scales down if it's too big */
-        max-height: 100%; /* Ensure the image scales down if it's too big */
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .intro-text {
@@ -247,60 +221,74 @@ a:hover {
 
     .publication-img {
         margin-bottom: 10px;
-        border: 3px solid #d4a5a5; /* Soft pink border */
-        border-radius: 15px; /* Rounded corners */
-        object-fit: contain; /* Ensure the entire image is visible */
-        margin-right: 20px; /* Add spacing between image and text */
-        object-fit: cover;  /* This crops the image to fit the container */
-        overflow: hidden; /* Ensures anything overflowing is hidden */
-
+        border: 3px solid #d4a5a5;
+        border-radius: 15px;
     }
 
     .publication-details {
         text-align: center;
     }
 }
-
+/* News Section */
 .news-section {
-    /* width: 100%; */
-    margin: 20px auto;
     padding: 20px;
-    background-color: #1a1a1a;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
-    font-size: 0.8em;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #1a1a1a; /* Slightly lighter dark background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+    color: #e0e0e0; /* Light text color */
 }
 
 .news-section h2 {
-    text-align: left;
-    color: #d4a5a5;
-
+    font-size: 1.8em;
+    text-align: center;
+    color: #d4a5a5; /* Soft pink color for headings */
+    margin-bottom: 15px;
 }
 
-.news-item {
-    border-bottom: 1px #ddd;
-    background-color: #2b1e1e;
-    border-radius: 5px; /* Slightly rounded corners */
-    border: 2px #572f2f; /* Soft pink border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    /* padding: 10px 0; */
+/* Scrollable News Box */
+.news-scroll-box {
+    height: 200px; /* Adjust as needed */
+    overflow-y: auto;
+    background-color: #0d0d0d; /* Darker background to match the main theme */
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 8px;
 }
 
-.news-item h3 {
-    color: #d4a5a5;
-    font-size: 0.9em;
-
+/* News Items */
+.news-scroll-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.news-item p {
-    color: #a6a4a4;
+.news-scroll-box li {
+    font-size: 1em;
+    color: #a3c1d1; /* Light blue for text color to match paragraph text */
+    padding: 10px 0; /* Space between each news item */
+    border-bottom: 1px solid #333333; /* Subtle separator line between items */
 }
 
-.news-item a {
-    color: #007BFF;
+.news-scroll-box li:last-child {
+    border-bottom: none; /* Remove border from last item */
+}
+
+/* News Item Links */
+.news-link {
+    color: #d4a5a5; /* Soft pink to match links */
     text-decoration: none;
 }
 
-.news-item a:hover {
+.news-link:hover {
+    color: #a3c1d1; /* Light blue on hover to match other links */
     text-decoration: underline;
+}
+
+/* Date Styling */
+.news-date {
+    font-weight: bold;
+    color: #ffa500; /* Accent color for dates */
+    margin-right: 5px;
 }
