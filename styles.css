@@ -26,11 +26,11 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 18px; /* Increased font size */
+    line-height: 1.8; /* Increased line height */
     letter-spacing: 0.3px;
     margin: 0;
-    padding: 0;
+    padding: 0 5%;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -61,6 +61,31 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #555;
+}
+
+.intro, #research, #publications, #contact, .news-section {
+    padding: 30px; /* Increase padding for more space within sections */
+    margin: 20px auto;
+    max-width: 1800px; /* Set a wider maximum width for containers */
+    background-color: var(--section-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em; /* Increased margin for headings */
+    margin-bottom: 1em; /* Increased margin for headings */
+}
+
+p {
+    margin-bottom: 1.5em; /* Increased margin for paragraphs */
+}
+
+nav, section, article, aside, footer {
+    padding: 2em; /* Increased padding for sections */
+    max-width: 1400px; /* Set a wider maximum width for containers */
+    margin: 0 auto; /* Center the containers */
+    background-color: #555; /* Gray background for containers */
 }
 
 /* Section Styles */
