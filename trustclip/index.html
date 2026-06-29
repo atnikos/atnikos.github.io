@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TrustCLIP: Learning Private Visual Features via Adversarial Reconstruction</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Noto Sans", sans-serif;
+                color: #1a1a1a;
+                background: #ffffff;
+                line-height: 1.6;
+            }
+
+            .header {
+                text-align: center;
+                padding: 60px 20px 30px;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .header h1 {
+                font-size: 2.6rem;
+                font-weight: 700;
+                line-height: 1.2;
+                margin-bottom: 24px;
+                color: #1a1a1a;
+            }
+
+            .authors {
+                font-size: 1.1rem;
+                color: #0099cc;
+                margin-bottom: 8px;
+            }
+
+            .authors span {
+                margin: 0 4px;
+            }
+
+            .authors sup {
+                font-size: 0.7em;
+            }
+
+            .affiliations {
+                font-size: 0.95rem;
+                color: #555;
+                margin-bottom: 6px;
+            }
+
+            .venue {
+                font-size: 1.05rem;
+                font-weight: 700;
+                color: #1a1a1a;
+                margin-top: 10px;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                gap: 14px;
+                margin-top: 22px;
+                flex-wrap: wrap;
+            }
+
+            .buttons a {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 24px;
+                border-radius: 24px;
+                text-decoration: none;
+                font-size: 0.95rem;
+                font-weight: 600;
+                color: #fff;
+                background: #333;
+                transition: background 0.2s;
+            }
+
+            .buttons a:hover {
+                background: #555;
+            }
+
+            .buttons a svg {
+                width: 16px;
+                height: 16px;
+                fill: currentColor;
+            }
+
+            .section-divider {
+                width: 80px;
+                height: 3px;
+                background: #0099cc;
+                margin: 40px auto;
+                border-radius: 2px;
+            }
+
+            .dataset-section {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px 60px;
+            }
+
+            .dataset-section h2 {
+                text-align: center;
+                font-size: 1.6rem;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            .dataset-section p.subtitle {
+                text-align: center;
+                font-size: 0.95rem;
+                color: #666;
+                margin-bottom: 30px;
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .controls {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 28px;
+                flex-wrap: wrap;
+            }
+
+            .controls label {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #555;
+            }
+
+            .controls select,
+            .controls input {
+                padding: 8px 14px;
+                border: 1.5px solid #ddd;
+                border-radius: 8px;
+                font-size: 0.9rem;
+                font-family: inherit;
+                background: #fafafa;
+                outline: none;
+                transition: border-color 0.2s;
+            }
+
+            .controls select:focus,
+            .controls input:focus {
+                border-color: #0099cc;
+            }
+
+            .controls input[type="number"] {
+                width: 80px;
+            }
+
+            .controls button {
+                padding: 8px 20px;
+                border: none;
+                border-radius: 8px;
+                font-size: 0.9rem;
+                font-family: inherit;
+                font-weight: 600;
+                color: #fff;
+                background: #0099cc;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+
+            .controls button:hover {
+                background: #007aa3;
+            }
+
+            .stats {
+                text-align: center;
+                font-size: 0.85rem;
+                color: #999;
+                margin-bottom: 20px;
+            }
+
+            .grid-header {
+                display: grid;
+                grid-template-columns: 60px 1fr 1fr 1fr;
+                gap: 12px;
+                max-width: 1100px;
+                margin: 0 auto 8px;
+                padding: 12px 0;
+                border-bottom: 2px solid #1a1a1a;
+            }
+
+            .grid-header .col-label {
+                font-size: 0.85rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: #1a1a1a;
+                text-align: center;
+            }
+
+            .grid-header .col-label:first-child {
+                text-align: left;
+            }
+
+            .sample-row {
+                display: grid;
+                grid-template-columns: 60px 1fr 1fr 1fr;
+                gap: 12px;
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 14px 0;
+                border-bottom: 1px solid #eee;
+                align-items: start;
+                transition: background 0.15s;
+            }
+
+            .sample-row:hover {
+                background: #f8fbfe;
+            }
+
+            .sample-id {
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: #999;
+                padding-top: 4px;
+                font-variant-numeric: tabular-nums;
+            }
+
+            .img-pair {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                text-align: center;
+            }
+
+            .img-pair .pair-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+
+            .img-pair img {
+                width: 100%;
+                border-radius: 4px;
+                display: block;
+                border: 1px solid #eee;
+            }
+
+            .img-pair .img-label {
+                font-size: 0.7rem;
+                color: #999;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+            }
+
+            .pagination {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                margin-top: 30px;
+            }
+
+            .pagination button {
+                padding: 8px 18px;
+                border: 1.5px solid #ddd;
+                border-radius: 8px;
+                font-size: 0.9rem;
+                font-family: inherit;
+                font-weight: 500;
+                color: #333;
+                background: #fff;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+
+            .pagination button:hover:not(:disabled) {
+                border-color: #0099cc;
+                color: #0099cc;
+            }
+
+            .pagination button:disabled {
+                opacity: 0.4;
+                cursor: default;
+            }
+
+            .pagination .page-info {
+                font-size: 0.9rem;
+                color: #666;
+                font-variant-numeric: tabular-nums;
+            }
+
+            .footer {
+                text-align: center;
+                padding: 40px 20px;
+                font-size: 0.85rem;
+                color: #aaa;
+                border-top: 1px solid #eee;
+                margin-top: 40px;
+            }
+
+            @media (max-width: 768px) {
+                .header h1 {
+                    font-size: 1.8rem;
+                }
+                .grid-header,
+                .sample-row {
+                    grid-template-columns: 40px 1fr 1fr 1fr;
+                    gap: 6px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>
+                TrustCLIP: Learning Private Visual Features via Adversarial
+                Reconstruction
+            </h1>
+            <div class="authors">
+                <span>Nikos Athanasiou<sup>1,2</sup>,</span>
+                <span>Ilya A. Petrov<sup>1,3</sup>,</span>
+                <span>Angela Yao<sup>1,4</sup>,</span>
+                <span>Shugao Ma<sup>1</sup>,</span>
+                <span>Eric Sauser<sup>1</sup>,</span>
+                <span>Edoardo Remelli<sup>1</sup>,</span>
+                <span>Shreyas Hampali<sup>1</sup>,</span>
+                <span>Johannes Sch&ouml;nberger<sup>1</sup>,</span>
+                <span>Fadime Sener<sup>1</sup>,</span>
+                <span>Bugra Tekin<sup>1</sup></span>
+            </div>
+            <div class="affiliations">
+                <sup>1</sup>Meta, Z&uuml;rich, Switzerland &nbsp;&nbsp;
+                <sup>2</sup>Max Planck Institute for Intelligent Systems,
+                T&uuml;bingen, Germany &nbsp;&nbsp;
+                <sup>3</sup>University of T&uuml;bingen, Germany &nbsp;&nbsp;
+                <sup>4</sup>National University of Singapore, Singapore
+            </div>
+            <div class="venue">Accepted at ECCV 2026</div>
+            <div class="buttons">
+                <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zm-3 12v-4h2v4h3l-4 4-4-4h3z"/></svg>
+                    Paper
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    Video
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 6.84 9.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>
+                    Code
+                </a>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="dataset-section">
+            <h2>Reconstruction Samples</h2>
+            <p class="subtitle">
+                Comparison of image reconstructions from CLIP features across
+                three privacy projection methods: original baseline (no
+                projection), identity projection, and MLP-based TrustCLIP
+                projection.
+            </p>
+
+            <div class="controls">
+                <label>Samples per page:</label>
+                <select id="perPage" onchange="render()">
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+
+                <label>Jump to sample:</label>
+                <input
+                    type="number"
+                    id="jumpTo"
+                    min="0"
+                    max="511"
+                    placeholder="0–511"
+                />
+                <button onclick="jumpToSample()">Go</button>
+            </div>
+
+            <div class="stats" id="stats"></div>
+
+            <div class="grid-header">
+                <div class="col-label">ID</div>
+                <div class="col-label">Baseline (No Projection)</div>
+                <div class="col-label">Identity Projection</div>
+                <div class="col-label">MLP Projection (Ours)</div>
+            </div>
+
+            <div id="gallery"></div>
+
+            <div class="pagination">
+                <button id="prevBtn" onclick="changePage(-1)">
+                    &larr; Previous
+                </button>
+                <span class="page-info" id="pageInfo"></span>
+                <button id="nextBtn" onclick="changePage(1)">
+                    Next &rarr;
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            TrustCLIP &mdash; 512 samples &times; 3 methods &times; 2 views
+            (original + reconstructed) = 3,072 images
+        </div>
+
+        <script>
+            const TOTAL_SAMPLES = 512;
+            let currentPage = 0;
+
+            function pad(n) {
+                return n.toString().padStart(2, "0");
+            }
+
+            function getPerPage() {
+                return parseInt(document.getElementById("perPage").value);
+            }
+
+            function render() {
+                const perPage = getPerPage();
+                const totalPages = Math.ceil(TOTAL_SAMPLES / perPage);
+                if (currentPage >= totalPages) currentPage = totalPages - 1;
+
+                const start = currentPage * perPage;
+                const end = Math.min(start + perPage, TOTAL_SAMPLES);
+
+                document.getElementById("stats").textContent =
+                    `Showing samples ${start}–${end - 1} of ${TOTAL_SAMPLES} total`;
+
+                const gallery = document.getElementById("gallery");
+                gallery.innerHTML = "";
+
+                for (let i = start; i < end; i++) {
+                    const id = pad(i);
+                    const row = document.createElement("div");
+                    row.className = "sample-row";
+                    row.innerHTML = `
+                    <div class="sample-id">#${id}</div>
+                    ${makeColumn("web_downloaded_samples_baseline", id)}
+                    ${makeColumn("web_downloaded_samples_id", id)}
+                    ${makeColumn("web_downloaded_samples_mlp", id)}
+                `;
+                    gallery.appendChild(row);
+                }
+
+                document.getElementById("pageInfo").textContent =
+                    `Page ${currentPage + 1} of ${totalPages}`;
+                document.getElementById("prevBtn").disabled = currentPage === 0;
+                document.getElementById("nextBtn").disabled =
+                    currentPage >= totalPages - 1;
+            }
+
+            function makeColumn(folder, id) {
+                return `
+                <div class="img-pair">
+                    <div class="pair-row">
+                        <div>
+                            <div class="img-label">Original</div>
+                            <img src="web_downloaded_samples_baseline/sample_${id}_original.png"
+                                 alt="Original ${id}"
+                                 loading="lazy">
+                        </div>
+                        <div>
+                            <div class="img-label">Reconstructed</div>
+                            <img src="${folder}/sample_${id}_reconstructed.png"
+                                 alt="Reconstructed ${id}"
+                                 loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            `;
+            }
+
+            function changePage(delta) {
+                const totalPages = Math.ceil(TOTAL_SAMPLES / getPerPage());
+                currentPage = Math.max(
+                    0,
+                    Math.min(totalPages - 1, currentPage + delta),
+                );
+                render();
+                window.scrollTo({
+                    top: document.querySelector(".grid-header").offsetTop - 20,
+                    behavior: "smooth",
+                });
+            }
+
+            function jumpToSample() {
+                const val = parseInt(document.getElementById("jumpTo").value);
+                if (isNaN(val) || val < 0 || val >= TOTAL_SAMPLES) return;
+                const perPage = getPerPage();
+                currentPage = Math.floor(val / perPage);
+                render();
+                window.scrollTo({
+                    top: document.querySelector(".grid-header").offsetTop - 20,
+                    behavior: "smooth",
+                });
+            }
+
+            render();
+        </script>
+    </body>
+</html>
