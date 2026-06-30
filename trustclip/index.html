@@ -104,6 +104,79 @@
                 border-radius: 2px;
             }
 
+            .tldr {
+                max-width: 760px;
+                margin: 28px auto 0;
+                padding: 0 20px;
+                text-align: center;
+                font-size: 1.05rem;
+                color: #444;
+            }
+
+            .tldr strong {
+                color: #0099cc;
+            }
+
+            .abstract-section {
+                max-width: 820px;
+                margin: 0 auto;
+                padding: 0 24px;
+            }
+
+            .abstract-section h2 {
+                text-align: center;
+                font-size: 1.6rem;
+                font-weight: 700;
+                margin-bottom: 18px;
+            }
+
+            .abstract-section p {
+                font-size: 1rem;
+                color: #333;
+                text-align: justify;
+            }
+
+            .highlights {
+                max-width: 1000px;
+                margin: 40px auto 0;
+                padding: 0 20px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+            }
+
+            .highlight-card {
+                background: #f8fbfe;
+                border: 1px solid #e3eef5;
+                border-radius: 12px;
+                padding: 22px 20px;
+                text-align: center;
+            }
+
+            .highlight-card .icon {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+
+            .highlight-card h3 {
+                font-size: 1.05rem;
+                font-weight: 700;
+                margin-bottom: 6px;
+                color: #1a1a1a;
+            }
+
+            .highlight-card p {
+                font-size: 0.88rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            @media (max-width: 768px) {
+                .highlights {
+                    grid-template-columns: 1fr;
+                }
+            }
+
             .dataset-section {
                 max-width: 1200px;
                 margin: 0 auto;
@@ -189,12 +262,11 @@
 
             .grid-header {
                 display: grid;
-                grid-template-columns: 60px 1fr 1fr 1fr;
-                gap: 12px;
-                max-width: 1100px;
+                grid-template-columns: 50px 1fr 1fr 1fr;
+                gap: 22px;
+                max-width: 1160px;
                 margin: 0 auto 8px;
-                padding: 12px 0;
-                border-bottom: 2px solid #1a1a1a;
+                padding: 0 0 4px;
             }
 
             .grid-header .col-label {
@@ -204,26 +276,32 @@
                 letter-spacing: 0.05em;
                 color: #1a1a1a;
                 text-align: center;
+                padding: 12px 8px;
+                border-radius: 8px 8px 0 0;
+                border-bottom: 3px solid #d9d9d9;
             }
 
             .grid-header .col-label:first-child {
                 text-align: left;
+                border-bottom: none;
+            }
+
+            /* highlighted "Ours / Max. Privacy" column */
+            .grid-header .col-label.highlight-col {
+                background: #eef7fc;
+                color: #007aa3;
+                border-bottom-color: #0099cc;
             }
 
             .sample-row {
                 display: grid;
-                grid-template-columns: 60px 1fr 1fr 1fr;
-                gap: 12px;
-                max-width: 1100px;
+                grid-template-columns: 50px 1fr 1fr 1fr;
+                gap: 22px;
+                max-width: 1160px;
                 margin: 0 auto;
                 padding: 14px 0;
                 border-bottom: 1px solid #eee;
                 align-items: start;
-                transition: background 0.15s;
-            }
-
-            .sample-row:hover {
-                background: #f8fbfe;
             }
 
             .sample-id {
@@ -239,6 +317,24 @@
                 flex-direction: column;
                 gap: 4px;
                 text-align: center;
+                padding: 10px;
+                border-radius: 8px;
+                background: #fafafa;
+                transition: background 0.15s;
+            }
+
+            .img-pair:hover {
+                background: #f2f2f2;
+            }
+
+            .img-pair.highlight {
+                background: #eef7fc;
+                border: 1px solid #cfe8f5;
+                padding: 9px;
+            }
+
+            .img-pair.highlight:hover {
+                background: #e3f1f9;
             }
 
             .img-pair .pair-row {
@@ -363,6 +459,72 @@
 
         <div class="section-divider"></div>
 
+        <p class="tldr">
+            <strong>TL;DR:</strong> CLIP-style visual features can be inverted to
+            reconstruct the original image, leaking private content. TrustCLIP
+            trains a projection against a generative reconstruction attacker, so
+            features stay useful for downstream tasks but can no longer be turned
+            back into recognizable images.
+        </p>
+
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="icon">🔒</div>
+                <h3>Privacy by design</h3>
+                <p>
+                    Optimizes directly against a generative inversion attacker,
+                    not just discriminative privacy proxies.
+                </p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🎯</div>
+                <h3>Utility preserved</h3>
+                <p>
+                    Keeps class semantics and downstream signal &mdash;
+                    classification and VLM (LLaVA-SP) performance stay
+                    competitive with the unprotected baseline.
+                </p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🖼️</div>
+                <h3>Less reconstructible</h3>
+                <p>
+                    Substantially degrades the fidelity of image reconstructions
+                    recovered from features, confirmed by privacy metrics.
+                </p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="abstract-section">
+            <h2>Abstract</h2>
+            <p>
+                Vision and vision&ndash;language models rely on high-level visual
+                representations that are increasingly used across recognition,
+                retrieval, and multimodal reasoning pipelines. However, recent
+                advances in generative modeling have shown that such features can
+                often be inverted, enabling realistic reconstructions of the
+                underlying image and raising significant privacy risks. We revisit
+                this problem through the lens of reconstruction and propose
+                <em>TrustCLIP</em>, a reconstruction-driven framework that treats a
+                feature-conditioned generator as an explicit privacy adversary.
+                TrustCLIP learns a projection between encoder features and
+                downstream modules that is explicitly optimized to degrade the
+                reconstructions produced by generative attackers while retaining
+                the necessary signals for downstream tasks. Unlike prior defenses
+                that rely on discriminative privacy metrics, TrustCLIP directly
+                optimizes against a generative reconstruction attacker, targeting a
+                threat not captured by standard evaluation protocols. We
+                demonstrate its effectiveness in both conventional classification
+                and multimodal large language model pipelines. Across these
+                settings, TrustCLIP consistently reduces the fidelity of generative
+                inversions while maintaining downstream task performance.
+            </p>
+        </div>
+
+        <div class="section-divider"></div>
+
         <div class="dataset-section">
             <h2>Reconstruction Samples</h2>
             <p class="subtitle">
@@ -396,8 +558,8 @@
             <div class="grid-header">
                 <div class="col-label">ID</div>
                 <div class="col-label">Baseline (No Projection)</div>
-                <div class="col-label">Identity Projection</div>
-                <div class="col-label">MLP Projection (Ours)</div>
+                <div class="col-label">Identity Projection (Ours)</div>
+                <div class="col-label highlight-col">MLP Projection (Ours, Max. Privacy)</div>
             </div>
 
             <div id="gallery"></div>
@@ -452,7 +614,7 @@
                     <div class="sample-id">#${id}</div>
                     ${makeColumn("web_downloaded_samples_baseline", id)}
                     ${makeColumn("web_downloaded_samples_id", id)}
-                    ${makeColumn("web_downloaded_samples_mlp", id)}
+                    ${makeColumn("web_downloaded_samples_mlp", id, "highlight")}
                 `;
                     gallery.appendChild(row);
                 }
@@ -464,9 +626,9 @@
                     currentPage >= totalPages - 1;
             }
 
-            function makeColumn(folder, id) {
+            function makeColumn(folder, id, extraClass = "") {
                 return `
-                <div class="img-pair">
+                <div class="img-pair ${extraClass}">
                     <div class="pair-row">
                         <div>
                             <div class="img-label">Original</div>
