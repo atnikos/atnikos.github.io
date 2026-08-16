@@ -1,562 +1,637 @@
 <!DOCTYPE html>
-<!-- <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikos Athanasiou - Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head> -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
-<meta http-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()" />
 
-<link rel="icon" type="image/jpg" href="./assets/20240715_Athanasiou_Nikos_2.jpg">
 <title>Nikos Athanasiou</title>
-<meta name="turbolinks-cache-control" content="no-cache">
-<meta name="keywords" content="">
-<meta name="description" content="">
 <meta name="author" content="Nikos Athanasiou">
-<meta property="og:description" content=""/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://atnikos.github.io"/>
-<!--  Essential META Tags -->
-<meta property="og:title" content="NikosAthanasiou ">
-<meta property="og:type" content="website" />
-<meta property="og:image" type="image/jpg" content="./assets/20240715_Athanasiou_Nikos_2.jpg">
-<meta property="og:url" content="https://atnikos.github.io">
-<meta name="twitter:card" content="summary_large_image">
-<!--  Non-Essential, But Recommended -->
-<meta property="og:description" content="Nikos Athanasiou">
+<meta name="description" content="Nikos Athanasiou is a Research Scientist at Flexion Robotics in Zurich, working on 3D humans, human motion and language. Previously a Ph.D. student at the Max Planck Institute for Intelligent Systems.">
+<meta name="keywords" content="Nikos Athanasiou, 3D human motion, motion generation, computer vision, machine learning, Flexion Robotics, Max Planck Institute">
+
+<!-- Open Graph / social previews (absolute URLs are required here) -->
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Nikos Athanasiou">
+<meta property="og:title" content="Nikos Athanasiou">
+<meta property="og:description" content="Research Scientist at Flexion Robotics. 3D humans, human motion and language.">
+<meta property="og:url" content="https://atnikos.github.io/">
+<meta property="og:image" content="https://atnikos.github.io/assets/20240715_Athanasiou_Nikos_2.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image:alt" content="Nikos Athanasiou">
+
+<link rel="canonical" href="https://atnikos.github.io/">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+<meta http-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Set the theme before first paint so the page never flashes the wrong one. -->
+<script>
+    (function () {
+        var saved = null;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        var dark = saved ? saved === 'dark'
+                         : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+</script>
 </head>
 
 <body>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav> -->
-    <!-- Toggle Theme Button -->
-    <button id="theme-toggle" aria-label="Toggle dark/light mode">
-        <span id="theme-icon">☀ / 🌙</span>
-    </button>
-    <main>
-        <section id="home" class="intro">
+    <header class="site-nav">
+        <nav class="site-nav-inner" aria-label="Main">
+            <a class="site-nav-name" href="#top">Nikos Athanasiou</a>
+            <ul class="site-nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" type="button" aria-label="Switch to light theme" title="Toggle theme">
+                <span id="theme-icon" aria-hidden="true">🌙</span>
+            </button>
+        </nav>
+    </header>
 
-                <div class="profile-container">
-                    <!-- Container for Image and Icons -->
-                    <div class="profile-image-icons">
-                        <h1>Nikos Athanasiou</h1>
-                    
-                        <img src="assets/20240715_Athanasiou_Nikos_2.jpg" alt="Profile Picture" class="profile-pic">
-                        <div class="icon-links">
-                            <a class="fa fa-envelope fa-2x" href="mailto:athn.nik@gmail.com"></a>
-                            <a class="ai ai-google-scholar ai-2x" href="https://scholar.google.com/citations?user=LhlnmyEAAAAJ&hl=en"></a>
-                            <a class="fa fa-twitter fa-2x" href="https://x.com/_nikos_athan"></a>
-                            <a class="fa fa-github fa-2x" href="http://github.com/atnikos/"></a>
-                        </div>
-                    </div>
-
-                    <div class="intro-text">
-
-                    
-                    <p>Ph.D. student at the Max Planck Institute for Intelligent 
-                        Systems, Perceiving Systems department. My Ph.D. research 
-                        focuses on exploring and analyzing the 
-                        underlying causes behind human movement, 
-                        combining language with human movement to generate and 
-                        control 3D human motions. 
-                        I am lucky to be supervised by <a href="https://ps.is.mpg.de/person/black" 
-                        class="research-link">Michael J. Black</a> and 
-                        <a href="https://www.di.ens.fr/~varol/" class="research-link">Gül Varol</a>.
-                    </p>
-                    <p>Before that I did my BS & MEng. (Diploma) at 
-                        <a href="https://www.ece.ntua.gr/en"> ECE, NTUA</a> in 
-                        Athens. Back then, I did research in Natural Language 
-                        Representations at <a href="https://slp-ntua.github.io/"> 
-                        Speech and Language Processing group</a> under the 
-                        supervision of <a href="https://slp-ntua.github.io/potam/"> 
-                        Alexandros Potamianos</a>. 
-                        I also worked for a while at 
-                        <a href="https://deeplab.ai">Deeplab</a>, during its 
-                        early stages, with a wonderful team of people.
-                    </p>
-                </div>
+    <main id="main">
+        <section id="about" class="hero">
+            <div class="hero-media">
+                <img src="assets/20240715_Athanasiou_Nikos_2.jpg"
+                     alt="Portrait of Nikos Athanasiou"
+                     class="profile-pic" width="320" height="320">
+                <ul class="icon-links">
+                    <li><a href="mailto:athn.nik@gmail.com" aria-label="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                    <li><a href="https://scholar.google.com/citations?user=LhlnmyEAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a></li>
+                    <li><a href="https://github.com/atnikos/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                    <li><a href="https://x.com/_nikos_athan" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/nikos-athanasiou-73290b142/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
             </div>
-              <div class="news-section">
-                <h2>Latest News</h2>
-                <div class="news-scroll-box">
-                    <ul>
-                        <li>
-                            <span class="news-date">June 2026:</span>
-                            Started as a Research Scientist at
-                            <a href="https://flexion.ai/">Flexion Robotics</a>
-                            in Zürich.
-                        </li>
 
-                        <li>
-                            <span class="news-date">June 2026:</span>
-                            <a href="./trustclip/">TrustCLIP</a>
-                            got accepted to
-                            <a href="https://eccv.ecva.net/">
-                                ECCV 2026</a>.
-                        </li>
+            <div class="hero-text">
+                <h1 id="top">Nikos Athanasiou</h1>
+                <p class="tagline">Research Scientist at
+                    <a href="https://flexion.ai/" target="_blank" rel="noopener">Flexion Robotics</a>,
+                    Z&uuml;rich &middot; 3D humans, motion and language
+                </p>
 
-                        <li>
-                            <span class="news-date">April 2024:</span>
-                            Started a Research Scientist Internship at
-                            Meta XR Zürich 
-                            , working with <a href="https://btekin.github.io/">
-Buğra Tekin </a>.
-                        </li>
-                        
-                        <li>
-                            <span class="news-date">December 2024:</span>
-                            <a href="https://motionfix.is.tue.mpg.de/">MotionFix</a> 
-                            was accepted to 
-                            <a href="https://asia.siggraph.org/2024/">
-                                SIGGRAPH Asia 2024 
-                            </a>in Japan🇯🇵.
-                        </li>
+                <p>I work on understanding and generating human movement &mdash; the
+                    intricate details of how people move, and how language can be used to
+                    describe, generate and control 3D human motion.
+                </p>
 
-                        <li>
-                            <span class="news-date">September 2024:</span>
-                            <a href="https://motionfix.is.tue.mpg.de/">MotionFix</a>
-                            got accepted to 
-                            <a href="https://asia.siggraph.org/2024/">
-                                SIGGRAPH Asia 2024</a>.
-                        </li>
-                        <li>
-                            <span class="news-date">February - April 2024:</span> Spent 2 
-                            wonderful months 
-                            in Paris at ENPC <a href="https://imagine-lab.enpc.fr/" >IMAGINE</a> Lab as 
-                            a guest of  <a href="https://gulvarol.github.io/" >Gül Varol</a>.
-                        </li>
-                        <li>
-                            <span class="news-date">March 2024:</span> 
-                            <a href="https://wandr.is.tue.mpg.de/">
-                                WANDR</a> and <a href="https://amuse.is.tue.mpg.de/">
-                                    AMUSE</a> got accepted to <a href="https://cvpr.thecvf.com/Conferences/2024">
-                                    CVPR 2024</a>.
-                        </li>
-                        <li>
-                            <span class="news-date">January 2024:</span> Gave a talk at 
-                            <a href="https://www.ea.com/">
-                                Electronic Arts (EA)</a> 
-                            about my papers, 
-                            <a href="https://teach.is.tue.mpg.de/">TEACH</a> & 
-                            <a href="https://sinc.is.tue.mpg.de/">SINC</a>.
-                        </li>
+                <p>Before that I was a Ph.D. student at the
+                    <a href="https://ps.is.mpg.de/" target="_blank" rel="noopener">Max Planck Institute for Intelligent Systems</a>,
+                    in the Perceiving Systems department, where I was lucky to be supervised by
+                    <a href="https://ps.is.mpg.de/person/black" target="_blank" rel="noopener">Michael J. Black</a> and
+                    <a href="https://www.di.ens.fr/~varol/" target="_blank" rel="noopener">G&uuml;l Varol</a>.
+                </p>
 
-                        <li>
-                            <span class="news-date">July 2023:</span>
-                            <a href="https://sinc.is.tue.mpg.de/">
-                                SINC</a> got accepted to <a href="https://iccv2023.thecvf.com/">
-                                    ICCV 2023</a>.
-                        </li>
-                        <li>
-                            <span class="news-date">January 2023:</span>
-                            Successfully passed my Qualification Exam (QE)
-                            as a part of my awesome PhD program (<a href="https://www.cis.mpg.de/csmaxplanck-overview/">
-                                CS@maxplanck</a>).
-                        </li>
-
-                        <li>
-                            <span class="news-date">August 2022:</span> 
-                             <a href="https://teach.is.tue.mpg.de/">
-                                TEACH</a> got accepted to <a href="https://3dvconf.github.io/2022/">
-                                    3DV 2022</a>.
-                        </li>
-                        <li>
-                            <span class="news-date">March 2021:</span> 
-                            <a href="https://babel.is.tue.mpg.de/">
-                                BABEL</a> got accepted at<a href="https://cvpr2021.thecvf.com/">
-                                CVPR 2021</a>.
-                        </li>
-
-                        <li>
-                            <span class="news-date">March 2020:</span> 
-                            <a href="https://github.com/mkocabas/VIBE">
-                                VIBE</a> got accepted at<a href="https://cvpr2020.thecvf.com/">
-                                CVPR 2020</a>.
-                        </li>
-
-                        <!-- Add more news items here -->
-                    </ul>
-                </div>
-                <!-- Add more news items as needed -->
+                <p>Earlier, I did my B.S. &amp; M.Eng. (Diploma) at
+                    <a href="https://www.ece.ntua.gr/en" target="_blank" rel="noopener">ECE, NTUA</a> in Athens.
+                    Back then I did research on natural language representations at the
+                    <a href="https://slp-ntua.github.io/" target="_blank" rel="noopener">Speech and Language Processing group</a>
+                    under the supervision of
+                    <a href="https://slp-ntua.github.io/potam/" target="_blank" rel="noopener">Alexandros Potamianos</a>.
+                    I also worked for a while at
+                    <a href="https://deeplab.ai" target="_blank" rel="noopener">Deeplab</a>, during its early
+                    stages, with a wonderful team of people.
+                </p>
             </div>
+        </section>
+
+        <section id="news">
+            <h2>News</h2>
+            <ul class="news-list" id="news-list">
+                <li class="news-item">
+                    <span class="news-date">Jun 2026</span>
+                    <span class="news-body">Started as a Research Scientist at
+                        <a href="https://flexion.ai/" target="_blank" rel="noopener">Flexion Robotics</a> in Z&uuml;rich.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Jun 2026</span>
+                    <span class="news-body"><a href="./trustclip/">TrustCLIP</a> got accepted to
+                        <a href="https://eccv.ecva.net/" target="_blank" rel="noopener">ECCV 2026</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Dec 2024</span>
+                    <span class="news-body">Presented
+                        <a href="https://motionfix.is.tue.mpg.de/" target="_blank" rel="noopener">MotionFix</a> at
+                        <a href="https://asia.siggraph.org/2024/" target="_blank" rel="noopener">SIGGRAPH Asia 2024</a>
+                        in Japan&nbsp;&#127471;&#127477;.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Sep 2024</span>
+                    <span class="news-body"><a href="https://motionfix.is.tue.mpg.de/" target="_blank" rel="noopener">MotionFix</a>
+                        got accepted to
+                        <a href="https://asia.siggraph.org/2024/" target="_blank" rel="noopener">SIGGRAPH Asia 2024</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Apr 2024</span>
+                    <span class="news-body">Started a Research Scientist internship at Meta XR Z&uuml;rich, working with
+                        <a href="https://btekin.github.io/" target="_blank" rel="noopener">Bu&#287;ra Tekin</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Feb&ndash;Apr 2024</span>
+                    <span class="news-body">Spent two wonderful months in Paris at the ENPC
+                        <a href="https://imagine-lab.enpc.fr/" target="_blank" rel="noopener">IMAGINE</a> lab as a guest of
+                        <a href="https://gulvarol.github.io/" target="_blank" rel="noopener">G&uuml;l Varol</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Mar 2024</span>
+                    <span class="news-body"><a href="https://wandr.is.tue.mpg.de/" target="_blank" rel="noopener">WANDR</a> and
+                        <a href="https://amuse.is.tue.mpg.de/" target="_blank" rel="noopener">AMUSE</a> got accepted to
+                        <a href="https://cvpr.thecvf.com/Conferences/2024" target="_blank" rel="noopener">CVPR 2024</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Jan 2024</span>
+                    <span class="news-body">Gave a talk at
+                        <a href="https://www.ea.com/" target="_blank" rel="noopener">Electronic Arts (EA)</a> about my papers
+                        <a href="https://teach.is.tue.mpg.de/" target="_blank" rel="noopener">TEACH</a> and
+                        <a href="https://sinc.is.tue.mpg.de/" target="_blank" rel="noopener">SINC</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Jul 2023</span>
+                    <span class="news-body"><a href="https://sinc.is.tue.mpg.de/" target="_blank" rel="noopener">SINC</a>
+                        got accepted to
+                        <a href="https://iccv2023.thecvf.com/" target="_blank" rel="noopener">ICCV 2023</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Jan 2023</span>
+                    <span class="news-body">Successfully passed my Qualification Exam (QE) as part of my awesome PhD program
+                        (<a href="https://www.cis.mpg.de/csmaxplanck-overview/" target="_blank" rel="noopener">CS@maxplanck</a>).</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Aug 2022</span>
+                    <span class="news-body"><a href="https://teach.is.tue.mpg.de/" target="_blank" rel="noopener">TEACH</a>
+                        got accepted to
+                        <a href="https://3dvconf.github.io/2022/" target="_blank" rel="noopener">3DV 2022</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Mar 2021</span>
+                    <span class="news-body"><a href="https://babel.is.tue.mpg.de/" target="_blank" rel="noopener">BABEL</a>
+                        got accepted to
+                        <a href="https://cvpr2021.thecvf.com/" target="_blank" rel="noopener">CVPR 2021</a>.</span>
+                </li>
+                <li class="news-item">
+                    <span class="news-date">Mar 2020</span>
+                    <span class="news-body"><a href="https://github.com/mkocabas/VIBE" target="_blank" rel="noopener">VIBE</a>
+                        got accepted to
+                        <a href="https://cvpr2020.thecvf.com/" target="_blank" rel="noopener">CVPR 2020</a>.</span>
+                </li>
+            </ul>
+            <button type="button" id="news-toggle" class="text-button" aria-expanded="false" aria-controls="news-list">
+                Show all news
+            </button>
+        </section>
+
         <section id="research">
             <h2>Research</h2>
-            <p>Supervised by <a href="https://ps.is.mpg.de/person/black" class="research-link">
-                Michael J. Black</a> and 
-                <a href="https://www.di.ens.fr/~varol/" 
-                class="research-link">Gül Varol</a>, 
-                my research aims to understand the intricate details of human movement 
-                and generate fine-grained 3D human motions.</p>
-            <p>I am interested in 3D humans, their interactions with other 
-                humans and their environment. I like working with videos, and 
-                I would ideally like using all kinds of possible data
-                 to train big models. I am also really interested in 
-                exploiting large VLMs and LLMs in smart ways to synthesize data 
-                and build on top of them. 
-            </p>
+            <p>My research aims to understand the intricate details of human movement and to
+                generate fine-grained 3D human motions. I am interested in 3D humans and their
+                interactions with other humans and with their environment.</p>
+            <p>I like working with video, and ideally I want to use every kind of data available
+                to train big models. I am also really interested in exploiting large VLMs and
+                LLMs in smart ways to synthesize data and build on top of them.</p>
         </section>
+
         <section id="publications">
             <h2>Publications</h2>
-            <div class="publications-container">
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="./trustclip/web_downloaded_samples_baseline/sample_00_reconstructed.png" alt="TrustCLIP: Learning Private Visual Features via Adversarial Reconstruction">
-                    </div>
-                    <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="./trustclip/" class="publication-title-link">TrustCLIP: Learning Private Visual Features via Adversarial Reconstruction</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">N Athanasiou, IA Petrov, A Yao, S Ma, E Sauser, E Remelli, S Hampali, J Schönberger, F Sener, B Tekin</p>
-                            <p class="publication-conference">ECCV 2026</p>
-                            <div class="publication-links">
-                                <a href="./trustclip/" class="publication-link">[website]</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <p class="section-note">
+                Full list also on
+                <a href="https://scholar.google.com/citations?user=LhlnmyEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+            </p>
 
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="./assets/paper-teaser/raise_arm.gif" alt="MotionFix: Text-based 3D Human Motion Editing">
-                    </div>
-                    <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://motionfix.is.tue.mpg.de/" class="publication-title-link">MotionFix: Text-driven 3D Human Motion Editing</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">N Athanasiou, A Cseke, M Diomataris, MJ Black, G Varol</p>
-                            <p class="publication-conference">SIGGRAPH Asia 2024</p>
-                            <div class="publication-links">
-                                <a href="https://arxiv.org/pdf/2408.00712" class="publication-link">[PDF]</a>
-                                <a href="https://www.youtube.com/watch?v=cFa6V6Ua-TY" class="publication-link">[video]</a>
-                                <a href="https://motionfix.is.tue.mpg.de/" class="publication-link">[website]</a>
-                                <a href="https://arxiv.org/abs/2408.00712" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/athn-nik/motionfix" class="publication-link">[code]</a>
-                                <a href="https://github.com/athn-nik/motionfix?tab=readme-ov-file#citation" class="publication-link">[bibtex]</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="pub-group">
+                <h3 class="pub-year">2026</h3>
 
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/wandr.jpeg" alt="WANDR: Intention-guided Human Motion Generation">
-                    </div>
+                <article class="publication">
+                    <a class="publication-img" href="./trustclip/" aria-hidden="true" tabindex="-1">
+                        <img src="./trustclip/web_downloaded_samples_baseline/sample_00_reconstructed.png"
+                             alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://wandr.is.tue.mpg.de/" class="publication-title-link">WANDR: Intention-guided Human Motion Generation</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">M Diomataris, N Athanasiou, O Taheri, X Wang, O Hilliges, MJ Black</p>
-                            <p class="publication-conference">CVPR 2024</p>
-                            <div class="publication-links">
-                                <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Diomataris_WANDR_Intention-guided_Human_Motion_Generation_CVPR_2024_paper.pdf" class="publication-link">[PDF]</a>
-                                <a href="https://www.youtube.com/watch?v=9szizM-XUCg" class="publication-link">[video]</a>
-                                <a href="https://wandr.is.tue.mpg.de/" class="publication-link">[website]</a>
-                                <a href="https://arxiv.org/pdf/2404.15383" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/markos-diomataris/wandr" class="publication-link">[code]</a>
-                                <a href="https://github.com/markos-diomataris/wandr?tab=readme-ov-file#citation" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="./trustclip/">TrustCLIP: Learning Private Visual Features via Adversarial Reconstruction</a>
+                        </h4>
+                        <p class="publication-authors"><span class="me">Nikos Athanasiou</span>, Ilya A. Petrov, Angela Yao,
+                            Shugao Ma, Eric Sauser, Edoardo Remelli, Shreyas Hampali, Johannes Sch&ouml;nberger,
+                            Fadime Sener, Bu&#287;ra Tekin</p>
+                        <p class="publication-conference">ECCV 2026</p>
+                        <div class="publication-links">
+                            <a href="./trustclip/" class="publication-link">website</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/amuse.png" alt="Emotional speech-driven 3D body animation via disentangled latent diffusion">
-                    </div>
+                </article>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-year">2024</h3>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://motionfix.is.tue.mpg.de/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="./assets/paper-teaser/raise_arm.gif" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://amuse.is.tue.mpg.de/" class="publication-title-link">Emotional speech-driven 3D body animation via disentangled latent diffusion</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">K Chhatre, R Daněček, N Athanasiou, G Becherini, C Peters, MJ Black, T Bolkart</p>
-                            <p class="publication-conference">CVPR 2024</p>
-                            <div class="publication-links">
-                                <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chhatre_Emotional_Speech-driven_3D_Body_Animation_via_Disentangled_Latent_Diffusion_CVPR_2024_paper.html" class="publication-link">[PDF]</a>
-                                <a href="https://arxiv.org/abs/2312.04466" class="publication-link">[arxiv]</a>
-                                <a href="https://amuse.is.tue.mpg.de/" class="publication-link">[website]</a>
-                                <a href="https://github.com/kiranchhatre/amuse" class="publication-link">[code]</a>
-                                <a href="https://amuse.is.tue.mpg.de" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://motionfix.is.tue.mpg.de/" target="_blank" rel="noopener">MotionFix: Text-driven 3D Human Motion Editing</a>
+                        </h4>
+                        <p class="publication-authors"><span class="me">Nikos Athanasiou</span>, Alp&aacute;r Cseke,
+                            Markos Diomataris, Michael J. Black, G&uuml;l Varol</p>
+                        <p class="publication-conference">SIGGRAPH Asia 2024</p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2408.00712" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/2408.00712" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://motionfix.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">website</a>
+                            <a href="https://www.youtube.com/watch?v=cFa6V6Ua-TY" target="_blank" rel="noopener" class="publication-link">video</a>
+                            <a href="https://github.com/athn-nik/motionfix" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://github.com/athn-nik/motionfix?tab=readme-ov-file#citation" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/sinc.png" alt="SINC: Spatial composition of 3D human motions for simultaneous action generation">
-                    </div>
+                </article>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://wandr.is.tue.mpg.de/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/wandr.jpeg" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://sinc.is.tue.mpg.de/" class="publication-title-link">SINC: Spatial composition of 3D human motions for simultaneous action generation</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">N Athanasiou, M Petrovich, MJ Black, G Varol</p>
-                            <p class="publication-conference">ICCV 2023</p>
-                            <div class="publication-links">
-                                <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Athanasiou_SINC_Spatial_Composition_of_3D_Human_Motions_for_Simultaneous_Action_ICCV_2023_paper.pdf" class="publication-link">[PDF]</a>
-                                <a href="https://www.youtube.com/watch?v=uwUriDnKTLI" class="publication-link">[video]</a>
-                                <a href="https://sinc.is.tue.mpg.de/" class="publication-link">[website]</a>
-                                <a href="https://arxiv.org/abs/2304.10417" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/athn-nik/sinc" class="publication-link">[code]</a>
-                                <a href="https://github.com/athn-nik/sinc?tab=readme-ov-file#citation" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://wandr.is.tue.mpg.de/" target="_blank" rel="noopener">WANDR: Intention-guided Human Motion Generation</a>
+                        </h4>
+                        <p class="publication-authors">Markos Diomataris, <span class="me">Nikos Athanasiou</span>,
+                            Omid Taheri, Xi Wang, Otmar Hilliges, Michael J. Black</p>
+                        <p class="publication-conference">CVPR 2024</p>
+                        <div class="publication-links">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Diomataris_WANDR_Intention-guided_Human_Motion_Generation_CVPR_2024_paper.pdf" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/2404.15383" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://wandr.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">website</a>
+                            <a href="https://www.youtube.com/watch?v=9szizM-XUCg" target="_blank" rel="noopener" class="publication-link">video</a>
+                            <a href="https://github.com/markos-diomataris/wandr" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://github.com/markos-diomataris/wandr?tab=readme-ov-file#citation" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/teach.png" alt="TEACH: Temporal Action Composition for 3D Humans">
-                    </div>
+                </article>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://amuse.is.tue.mpg.de/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/amuse.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://teach.is.tue.mpg.de/" class="publication-title-link">TEACH: Temporal Action Composition for 3D Humans</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">N Athanasiou, M Petrovich, MJ Black, G Varol</p>
-                            <p class="publication-conference">3DV 2022</p>
-                            <div class="publication-links">
-                                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10044438" class="publication-link">[PDF]</a>
-                                <a href="https://download.is.tue.mpg.de/teach/023_video.mp4" class="publication-link">[video]</a>
-                                <a href="https://teach.is.tue.mpg.de/" class="publication-link">[website]</a>
-                                <a href="https://arxiv.org/abs/2209.04066" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/athn-nik/teach" class="publication-link">[code]</a>
-                                <a href="https://github.com/athn-nik/teach?tab=readme-ov-file#citation" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://amuse.is.tue.mpg.de/" target="_blank" rel="noopener">AMUSE: Emotional Speech-driven 3D Body Animation via Disentangled Latent Diffusion</a>
+                        </h4>
+                        <p class="publication-authors">Kiran Chhatre, Radek Dan&#283;&#269;ek, <span class="me">Nikos Athanasiou</span>,
+                            Giorgio Becherini, Christopher Peters, Michael J. Black, Timo Bolkart</p>
+                        <p class="publication-conference">CVPR 2024</p>
+                        <div class="publication-links">
+                            <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Chhatre_Emotional_Speech-driven_3D_Body_Animation_via_Disentangled_Latent_Diffusion_CVPR_2024_paper.html" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/2312.04466" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://amuse.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">website</a>
+                            <a href="https://github.com/kiranchhatre/amuse" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://amuse.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/dsr.png" alt="Learning to regress bodies from images using differentiable semantic rendering">
-                    </div>
+                </article>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-year">2023</h3>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://sinc.is.tue.mpg.de/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/sinc.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://dsr.is.tue.mpg.de/" class="publication-title-link">Learning to regress bodies from images using differentiable semantic rendering</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">SK Dwivedi, N Athanasiou, M Kocabas, MJ Black</p>
-                            <p class="publication-conference">ICCV 2021</p>
-                            <div class="publication-links">
-                                <a href="https://arxiv.org/pdf/2110.03480" class="publication-link">[PDF]</a>
-                                <a href="https://www.youtube.com/watch?v=SWAgEdGCFFo" class="publication-link">[video]</a>
-                                <a href="https://dsr.is.tue.mpg.de/" class="publication-link">[website]</a>
-                                <a href="https://arxiv.org/abs/2110.03480" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/saidwivedi/DSR" class="publication-link">[code]</a>
-                                <a href="https://github.com/saidwivedi/DSR?tab=readme-ov-file#citation" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://sinc.is.tue.mpg.de/" target="_blank" rel="noopener">SINC: Spatial Composition of 3D Human Motions for Simultaneous Action Generation</a>
+                        </h4>
+                        <p class="publication-authors"><span class="me">Nikos Athanasiou</span>, Mathis Petrovich,
+                            Michael J. Black, G&uuml;l Varol</p>
+                        <p class="publication-conference">ICCV 2023</p>
+                        <div class="publication-links">
+                            <a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Athanasiou_SINC_Spatial_Composition_of_3D_Human_Motions_for_Simultaneous_Action_ICCV_2023_paper.pdf" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/2304.10417" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://sinc.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">website</a>
+                            <a href="https://www.youtube.com/watch?v=uwUriDnKTLI" target="_blank" rel="noopener" class="publication-link">video</a>
+                            <a href="https://github.com/athn-nik/sinc" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://github.com/athn-nik/sinc?tab=readme-ov-file#citation" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/babel.png" alt="BABEL: Bodies, action and behavior with English labels">
-                    </div>
+                </article>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-year">2022</h3>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://teach.is.tue.mpg.de/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/teach.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://babel.is.tue.mpg.de/" class="publication-title-link">BABEL: Bodies, action and behavior with English labels</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">AR Punnakkal, A Chandrasekaran, N Athanasiou, A Quiros-Ramirez, MJ Black</p>
-                            <p class="publication-conference">CVPR 2021</p>
-                            <div class="publication-links">
-                                <a href="https://arxiv.org/pdf/2106.09696" class="publication-link">[PDF]</a>
-                                <a href="https://www.youtube.com/watch?v=BYWxvjKpCqA" class="publication-link">[video]</a>
-                                <a href="https://babel.is.tue.mpg.de" class="publication-link">[website]</a>
-                                <a href="https://arxiv.org/abs/2106.09696" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/abhinanda-punnakkal/BABEL" class="publication-link">[code]</a>
-                                <a href="https://babel.is.tue.mpg.de/" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://teach.is.tue.mpg.de/" target="_blank" rel="noopener">TEACH: Temporal Action Composition for 3D Humans</a>
+                        </h4>
+                        <p class="publication-authors"><span class="me">Nikos Athanasiou</span>, Mathis Petrovich,
+                            Michael J. Black, G&uuml;l Varol</p>
+                        <p class="publication-conference">3DV 2022</p>
+                        <div class="publication-links">
+                            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10044438" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/2209.04066" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://teach.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">website</a>
+                            <a href="https://download.is.tue.mpg.de/teach/023_video.mp4" target="_blank" rel="noopener" class="publication-link">video</a>
+                            <a href="https://github.com/athn-nik/teach" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://github.com/athn-nik/teach?tab=readme-ov-file#citation" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/vibe.png" alt="VIBE: Video Inference for Human Body Pose and Shape Estimation">
-                    </div>
+                </article>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-year">2021</h3>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://dsr.is.tue.mpg.de/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/dsr.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://arxiv.org/abs/1912.05656" class="publication-title-link">VIBE: Video Inference for Human Body Pose and Shape Estimation</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">M Kocabas, N Athanasiou, MJ Black</p>
-                            <p class="publication-conference">CVPR 2020</p>
-                            <div class="publication-links">
-                                <a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Kocabas_VIBE_Video_Inference_for_Human_Body_Pose_and_Shape_Estimation_CVPR_2020_paper.html" class="publication-link">[PDF]</a>
-                                <a href="https://www.youtube.com/watch?v=rIr-nX63dUA" class="publication-link">[video]</a>
-                                <a href="https://arxiv.org/abs/1912.05656" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/mkocabas/VIBE" class="publication-link">[code]</a>
-                                <a href="https://github.com/mkocabas/VIBE?tab=readme-ov-file#citation" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://dsr.is.tue.mpg.de/" target="_blank" rel="noopener">Learning to Regress Bodies from Images using Differentiable Semantic Rendering</a>
+                        </h4>
+                        <p class="publication-authors">Sai Kumar Dwivedi, <span class="me">Nikos Athanasiou</span>,
+                            Muhammed Kocabas, Michael J. Black</p>
+                        <p class="publication-conference">ICCV 2021</p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2110.03480" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/2110.03480" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://dsr.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">website</a>
+                            <a href="https://www.youtube.com/watch?v=SWAgEdGCFFo" target="_blank" rel="noopener" class="publication-link">video</a>
+                            <a href="https://github.com/saidwivedi/DSR" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://github.com/saidwivedi/DSR?tab=readme-ov-file#citation" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/master-thesis.png" alt="Cognitive and Cross-Topic Methods for Natural Language Representations">
-                    </div>
+                </article>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://babel.is.tue.mpg.de/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/babel.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/49968" class="publication-title-link">Cognitive and Cross-Topic Methods for Natural Language Representations</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">N Athanasiou</p>
-                            <p class="publication-conference">Master Thesis</p>
-                            <div class="publication-links">
-                                <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/49968" class="publication-link">[PDF]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://babel.is.tue.mpg.de/" target="_blank" rel="noopener">BABEL: Bodies, Action and Behavior with English Labels</a>
+                        </h4>
+                        <p class="publication-authors">Abhinanda R. Punnakkal, Arjun Chandrasekaran,
+                            <span class="me">Nikos Athanasiou</span>, Alejandra Quiros-Ramirez, Michael J. Black</p>
+                        <p class="publication-conference">CVPR 2021</p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/pdf/2106.09696" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/2106.09696" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://babel.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">website</a>
+                            <a href="https://www.youtube.com/watch?v=BYWxvjKpCqA" target="_blank" rel="noopener" class="publication-link">video</a>
+                            <a href="https://github.com/abhinanda-punnakkal/BABEL" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://babel.is.tue.mpg.de/" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/cross-topic.png" alt="Cross-topic distributional semantic representations via unsupervised mappings">
-                    </div>
+                </article>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-year">2020</h3>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://arxiv.org/abs/1912.05656" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/vibe.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://aclanthology.org/N19-1110/" class="publication-title-link">Cross-topic distributional semantic representations via unsupervised mappings</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">E Briakou, N Athanasiou, A Potamianos</p>
-                            <p class="publication-conference">NAACL 2019</p>
-                            <div class="publication-links">
-                                <a href="https://aclanthology.org/N19-1110.pdf" class="publication-link">[PDF]</a>
-                                <a href="https://arxiv.org/abs/1904.05674" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/Elbria/utdsm_naacl2018" class="publication-link">[code]</a>
-                                <a href="https://aclanthology.org/N19-1110/" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://arxiv.org/abs/1912.05656" target="_blank" rel="noopener">VIBE: Video Inference for Human Body Pose and Shape Estimation</a>
+                        </h4>
+                        <p class="publication-authors">Muhammed Kocabas, <span class="me">Nikos Athanasiou</span>,
+                            Michael J. Black</p>
+                        <p class="publication-conference">CVPR 2020</p>
+                        <div class="publication-links">
+                            <a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Kocabas_VIBE_Video_Inference_for_Human_Body_Pose_and_Shape_Estimation_CVPR_2020_paper.html" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/1912.05656" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://www.youtube.com/watch?v=rIr-nX63dUA" target="_blank" rel="noopener" class="publication-link">video</a>
+                            <a href="https://github.com/mkocabas/VIBE" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://github.com/mkocabas/VIBE?tab=readme-ov-file#citation" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/neural_activ.png" alt="Neural Activation Semantic Models: Computational Lexical Semantic Models of Localized Neural Activations">
-                    </div>
+                </article>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-year">2019</h3>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://aclanthology.org/N19-1110/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/cross-topic.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://aclanthology.org/C18-1243/" class="publication-title-link">Neural activation semantic models: Computational lexical semantic models of localized neural activations</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">N Athanasiou, E Iosif, A Potamianos</p>
-                            <p class="publication-conference">COLING 2018</p>
-                            <div class="publication-links">
-                                <a href="https://aclanthology.org/C18-1243.pdf" class="publication-link">[PDF]</a>
-                                <a href="https://github.com/athn-nik/neural_asm" class="publication-link">[code]</a>
-                                <a href="https://aclanthology.org/C18-1243/" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://aclanthology.org/N19-1110/" target="_blank" rel="noopener">Cross-topic Distributional Semantic Representations via Unsupervised Mappings</a>
+                        </h4>
+                        <p class="publication-authors">Eleftheria Briakou, <span class="me">Nikos Athanasiou</span>,
+                            Alexandros Potamianos</p>
+                        <p class="publication-conference">NAACL 2019</p>
+                        <div class="publication-links">
+                            <a href="https://aclanthology.org/N19-1110.pdf" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/1904.05674" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://github.com/Elbria/utdsm_naacl2018" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://aclanthology.org/N19-1110/" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/irony2.png" alt="Ntua-slp at Semeval-2018 task 3: Tracking Ironic Tweets using Ensembles of Word and Character Level Attentive Rnns">
-                    </div>
+                </article>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-year">2018</h3>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://aclanthology.org/C18-1243/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/neural_activ.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://aclanthology.org/S18-1100/" class="publication-title-link">Ntua-slp at semeval-2018 task 3: Tracking ironic tweets using ensembles of word and character level attentive rnns</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">C Baziotis, N Athanasiou, P Papalampidi, A Kolovou, G Paraskevopoulos</p>
-                            <p class="publication-conference">arXiv preprint arXiv:1804.06659</p>
-                            <div class="publication-links">
-                                <a href="https://aclanthology.org/S18-1100.pdf" class="publication-link">[PDF]</a>
-                                <a href="https://arxiv.org/abs/1804.06659" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/cbaziotis/ntua-slp-semeval2018" class="publication-link">[code]</a>
-                                <a href="https://aclanthology.org/S18-1100/" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://aclanthology.org/C18-1243/" target="_blank" rel="noopener">Neural Activation Semantic Models: Computational Lexical Semantic Models of Localized Neural Activations</a>
+                        </h4>
+                        <p class="publication-authors"><span class="me">Nikos Athanasiou</span>, Elias Iosif,
+                            Alexandros Potamianos</p>
+                        <p class="publication-conference">COLING 2018</p>
+                        <div class="publication-links">
+                            <a href="https://aclanthology.org/C18-1243.pdf" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://github.com/athn-nik/neural_asm" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://aclanthology.org/C18-1243/" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/emotion.png" alt="Ntua-slp at semeval-2018 task 1: Predicting affective content in tweets with deep attentive rnns and transfer learning">
-                    </div>
+                </article>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://aclanthology.org/S18-1037/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/emotion.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://aclanthology.org/S18-1037/" class="publication-title-link">Ntua-slp at semeval-2018 task 1: Predicting affective content in tweets with deep attentive rnns and transfer learning</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">C Baziotis, N Athanasiou, A Chronopoulou, A Kolovou</p>
-                            <p class="publication-conference">arXiv preprint arXiv:1804.06658</p>
-                            <div class="publication-links">
-                                <a href="https://aclanthology.org/S18-1037.pdf" class="publication-link">[PDF]</a>
-                                <a href="https://arxiv.org/abs/1804.06658" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/cbaziotis/ntua-slp-semeval2018" class="publication-link">[code]</a>
-                                <a href="https://aclanthology.org/S18-1037/" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://aclanthology.org/S18-1037/" target="_blank" rel="noopener">NTUA-SLP at SemEval-2018 Task 1: Predicting Affective Content in Tweets with Deep Attentive RNNs and Transfer Learning</a>
+                        </h4>
+                        <p class="publication-authors">Christos Baziotis, <span class="me">Nikos Athanasiou</span>,
+                            Alexandra Chronopoulou, Athanasia Kolovou, Georgios Paraskevopoulos, Nikolaos Ellinas,
+                            Shrikanth Narayanan, Alexandros Potamianos</p>
+                        <p class="publication-conference">SemEval 2018</p>
+                        <div class="publication-links">
+                            <a href="https://aclanthology.org/S18-1037.pdf" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/1804.06658" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://github.com/cbaziotis/ntua-slp-semeval2018" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://aclanthology.org/S18-1037/" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-img">
-                        <img src="assets/paper-teaser/emoji.png" alt="Ntua-slp at semeval-2018 task 2: Predicting emojis using rnns with context-aware attention">
-                    </div>
+                </article>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://aclanthology.org/S18-1069/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/emoji.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
                     <div class="publication-details">
-                        <div class="publication-title">
-                            <a href="https://aclanthology.org/S18-1069/" class="publication-title-link">Ntua-slp at semeval-2018 task 2: Predicting emojis using rnns with context-aware attention</a>
-                        </div>
-                        <div class="publication-info">
-                            <p class="publication-authors">C Baziotis, N Athanasiou, G Paraskevopoulos, N Ellinas, A Kolovou</p>
-                            <p class="publication-conference">arXiv preprint arXiv:1804.06657</p>
-                            <div class="publication-links">
-                                <a href="https://aclanthology.org/S18-1069.pdf" class="publication-link">[PDF]</a>
-                                <a href="https://arxiv.org/abs/1804.06657" class="publication-link">[arxiv]</a>
-                                <a href="https://github.com/cbaziotis/ntua-slp-semeval2018" class="publication-link">[code]</a>
-                                <a href="https://aclanthology.org/S18-1069/" class="publication-link">[bibtex]</a>
-                            </div>
+                        <h4 class="publication-title">
+                            <a href="https://aclanthology.org/S18-1069/" target="_blank" rel="noopener">NTUA-SLP at SemEval-2018 Task 2: Predicting Emojis using RNNs with Context-aware Attention</a>
+                        </h4>
+                        <p class="publication-authors">Christos Baziotis, <span class="me">Nikos Athanasiou</span>,
+                            Athanasia Kolovou, Georgios Paraskevopoulos, Nikolaos Ellinas, Alexandros Potamianos</p>
+                        <p class="publication-conference">SemEval 2018</p>
+                        <div class="publication-links">
+                            <a href="https://aclanthology.org/S18-1069.pdf" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/1804.06657" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://github.com/cbaziotis/ntua-slp-semeval2018" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://aclanthology.org/S18-1069/" target="_blank" rel="noopener" class="publication-link">bibtex</a>
                         </div>
                     </div>
-                </div>
+                </article>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://aclanthology.org/S18-1100/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/irony2.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
+                    <div class="publication-details">
+                        <h4 class="publication-title">
+                            <a href="https://aclanthology.org/S18-1100/" target="_blank" rel="noopener">NTUA-SLP at SemEval-2018 Task 3: Tracking Ironic Tweets using Ensembles of Word and Character Level Attentive RNNs</a>
+                        </h4>
+                        <p class="publication-authors">Christos Baziotis, <span class="me">Nikos Athanasiou</span>,
+                            Pinelopi Papalampidi, Athanasia Kolovou, Georgios Paraskevopoulos, Nikolaos Ellinas,
+                            Alexandros Potamianos</p>
+                        <p class="publication-conference">SemEval 2018</p>
+                        <div class="publication-links">
+                            <a href="https://aclanthology.org/S18-1100.pdf" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                            <a href="https://arxiv.org/abs/1804.06659" target="_blank" rel="noopener" class="publication-link">arXiv</a>
+                            <a href="https://github.com/cbaziotis/ntua-slp-semeval2018" target="_blank" rel="noopener" class="publication-link">code</a>
+                            <a href="https://aclanthology.org/S18-1100/" target="_blank" rel="noopener" class="publication-link">bibtex</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pub-group">
+                <h3 class="pub-year">Thesis</h3>
+
+                <article class="publication">
+                    <a class="publication-img" href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/49968" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+                        <img src="assets/paper-teaser/master-thesis.png" alt="" loading="lazy" width="480" height="320">
+                    </a>
+                    <div class="publication-details">
+                        <h4 class="publication-title">
+                            <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/49968" target="_blank" rel="noopener">Cognitive and Cross-Topic Methods for Natural Language Representations</a>
+                        </h4>
+                        <p class="publication-authors"><span class="me">Nikos Athanasiou</span></p>
+                        <p class="publication-conference">Diploma Thesis, NTUA</p>
+                        <div class="publication-links">
+                            <a href="https://dspace.lib.ntua.gr/xmlui/handle/123456789/49968" target="_blank" rel="noopener" class="publication-link">PDF</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
+
         <section id="contact">
-            <h2>Contact Me</h2>
-            <p>You can reach me via email at <a href="mailto:nathanasiou@tue.mpg.de" class="email-link">nathanasiou@tue.mpg.de</a>.
-            I strongly prefer email. I am rarely active and almost never keep up with 
-            messages in <a href="https://x.com/_nikos_athan">X/Twitter 🐥</a> or 
-            <a href="https://www.linkedin.com/in/nikos-athanasiou-73290b142/">Linkedin 💼</a>.
-            However, I try to reply to all my emails and will probably solve  
-            <a href="https://www.github.com/atnikos/">your issues 👾</a>. 
+            <h2>Contact</h2>
+            <p>You can reach me by email at
+                <a href="mailto:athn.nik@gmail.com">athn.nik@gmail.com</a>.
+                I strongly prefer email. I am rarely active and almost never keep up with messages on
+                <a href="https://x.com/_nikos_athan" target="_blank" rel="noopener">X/Twitter&nbsp;&#128036;</a> or
+                <a href="https://www.linkedin.com/in/nikos-athanasiou-73290b142/" target="_blank" rel="noopener">LinkedIn&nbsp;&#128188;</a>.
+                However, I try to reply to all my emails and will probably solve
+                <a href="https://github.com/atnikos/" target="_blank" rel="noopener">your issues&nbsp;&#128126;</a>.
             </p>
-            <p>
-            Except if you have an issue related to conda. This you have to solve it on your 
-            own or seek for professional help. The last two sentences are 
-            <a href="https://en.wikipedia.org/wiki/Joke">a joke</a>.
+            <p>Except if you have an issue related to conda. That one you have to solve on your own,
+                or seek professional help. The last two sentences are
+                <a href="https://en.wikipedia.org/wiki/Joke" target="_blank" rel="noopener">a joke</a>.
             </p>
         </section>
     </main>
-    <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const body = document.body;
-        
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-            themeIcon.textContent = body.classList.contains('light-theme') ? '☀️' : '🌙';
-        });
-    </script>
 
+    <footer class="site-footer">
+        <p>&copy; Nikos Athanasiou &middot; Built with plain HTML and CSS.</p>
+    </footer>
+
+    <script>
+        (function () {
+            /* ---- Theme toggle ---- */
+            var root = document.documentElement;
+            var toggle = document.getElementById('theme-toggle');
+            var icon = document.getElementById('theme-icon');
+
+            function paint() {
+                var dark = root.getAttribute('data-theme') === 'dark';
+                /* Show the theme you would switch *to*, matching the label. */
+                icon.textContent = dark ? '☀️' : '🌙';
+                toggle.setAttribute('aria-label',
+                    dark ? 'Switch to light theme' : 'Switch to dark theme');
+            }
+            paint();
+
+            toggle.addEventListener('click', function () {
+                var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                paint();
+            });
+
+            /* Follow the OS theme until the visitor picks one explicitly. */
+            var mq = window.matchMedia('(prefers-color-scheme: dark)');
+            mq.addEventListener('change', function (e) {
+                var saved = null;
+                try { saved = localStorage.getItem('theme'); } catch (err) {}
+                if (saved) return;
+                root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+                paint();
+            });
+
+            /* ---- News: collapse to the most recent few ---- */
+            var VISIBLE = 5;
+            var list = document.getElementById('news-list');
+            var newsToggle = document.getElementById('news-toggle');
+            var items = list.querySelectorAll('.news-item');
+
+            if (items.length > VISIBLE) {
+                list.classList.add('is-collapsed');
+                for (var i = VISIBLE; i < items.length; i++) {
+                    items[i].classList.add('news-item-extra');
+                }
+                newsToggle.addEventListener('click', function () {
+                    var expanded = list.classList.toggle('is-expanded');
+                    newsToggle.setAttribute('aria-expanded', String(expanded));
+                    newsToggle.textContent = expanded ? 'Show less' : 'Show all news';
+                });
+            } else {
+                newsToggle.hidden = true;
+            }
+        })();
+    </script>
 </body>
 </html>

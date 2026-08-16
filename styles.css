@@ -1,437 +1,627 @@
-/* Default Theme Variables (Dark Mode) */
+/* ==========================================================================
+   Nikos Athanasiou — personal site
+   Light is the default; dark is applied via [data-theme="dark"] on <html>,
+   which the inline head script sets from localStorage or the OS preference.
+   ========================================================================== */
+
 :root {
-    --background-color: #0d0d0d;
-    --text-color: #e0e0e0;
-    --nav-bg-color: #000000;
-    --link-color: #d4a5a5;
-    --link-hover-color: #a3c1d1;
-    --section-bg-color: #1a1a1a;
-    --border-color: #333333;
-    --news-date-color: #ffa500;
+    --bg: #fdfdfc;
+    --bg-elevated: #f4f3f0;
+    --text: #22252b;
+    --text-muted: #5f6570;
+    --border: #e3e1db;
+    --accent: #a8443f;
+    --accent-strong: #83302c;
+    --accent-wash: rgba(168, 68, 63, 0.07);
+    --shadow: 0 1px 2px rgba(20, 20, 20, 0.05);
+    --nav-bg: rgba(253, 253, 252, 0.85);
+
+    --content-width: 880px;
+    --radius: 10px;
+
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+    color-scheme: light;
 }
 
-/* Light Theme Overrides */
-.light-theme {
-    --background-color: #ffffff;
-    --text-color: #333333;
-    --nav-bg-color: #f0f0f0;
-    --link-color: #2d59eb;
-    --link-hover-color: #af19bf;
-    --section-bg-color: #f5f5f5;
-    --border-color: #cccccc;
-    --news-date-color: #ff6347;
+[data-theme="dark"] {
+    --bg: #0f1115;
+    --bg-elevated: #171a20;
+    --text: #e4e7ec;
+    --text-muted: #99a1ad;
+    --border: #262b34;
+    --accent: #e3a9a4;
+    --accent-strong: #f2c7c3;
+    --accent-wash: rgba(227, 169, 164, 0.09);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --nav-bg: rgba(15, 17, 21, 0.85);
+
+    color-scheme: dark;
 }
 
-/* General Styles */
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
+    /* Keep anchored sections clear of the sticky header. */
+    scroll-padding-top: 90px;
 }
 
 body {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18px; /* Increased font size */
-    line-height: 1.8; /* Increased line height */
-    letter-spacing: 0.35px;
-    margin: 0;
-    padding: 0 5%;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Navigation Styles */
-nav {
-    background-color: var(--nav-bg-color);
-    padding: 20px;
-}
-
-nav ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: space-around;
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.7;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-nav ul li a {
-    color: var(--link-color);
-    text-decoration: none;
-    font-size: 1.1em;
-    padding: 10px 20px;
-    border-radius: 5px;
-    letter-spacing: 0.3px;
-    line-height: 1.4;
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--text);
+    line-height: 1.25;
+    margin: 0 0 0.6em;
+    letter-spacing: -0.01em;
 }
 
-nav ul li a:hover {
-    background-color: #555;
-}
-
-.intro, #research, #publications, #contact, .news-section {
-    padding: 30px; /* Increase padding for more space within sections */
-    margin: 20px auto;
-    max-width: 1800px; /* Set a wider maximum width for containers */
-    background-color: var(--section-bg-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.5em; /* Increased margin for headings */
-    margin-bottom: 1em; /* Increased margin for headings */
-}
+h1 { font-size: 2.4rem; font-weight: 700; }
+h2 { font-size: 1.6rem; font-weight: 600; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+h4 { font-size: 1.05rem; font-weight: 600; }
 
 p {
-    margin-bottom: 1.5em; /* Increased margin for paragraphs */
+    margin: 0 0 1.1em;
 }
 
-nav, section, article, aside, footer {
-    padding: 2em; /* Increased padding for sections */
-    max-width: 1400px; /* Set a wider maximum width for containers */
-    margin: 0 auto; /* Center the containers */
+img {
+    max-width: 100%;
 }
 
-/* Section Styles */
-h1, h2 {
-    font-size: 1.8em;
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--link-color);
-    margin-bottom: 15px;
-}
-
-.intro-text p, .profile-container p {
-    font-size: 1em;
-    line-height: 1.6;
-    letter-spacing: 0.2px;
-    color: var(--text-color);
-    margin-bottom: 1em;
-}
-
-/* Link Styles */
 a {
-    color: var(--link-color);
+    color: var(--accent);
     text-decoration: none;
-    letter-spacing: 0.3px;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
 }
 
 a:hover {
-    color: var(--link-hover-color);
+    color: var(--accent-strong);
     text-decoration: underline;
 }
 
-/* Research Link Styles */
-.research-link, .email-link {
-    color: var(--link-color);
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
 }
 
-.research-link:hover, .email-link:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    padding: 10px 16px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0 0 var(--radius) 0;
+    z-index: 100;
 }
 
-/* Profile Container Styles */
-.profile-container {
+.skip-link:focus {
+    left: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Sticky navigation
+   -------------------------------------------------------------------------- */
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--nav-bg);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.site-nav-inner {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 20px;
-    max-width: 800px;
+    max-width: var(--content-width);
     margin: 0 auto;
+    padding: 12px 24px;
 }
 
-.profile-image-icons {
+.site-nav-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.site-nav-name:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.site-nav-links {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    margin-right: 20px;
+    gap: 4px;
+    list-style: none;
+    margin: 0 0 0 auto;
+    padding: 0;
 }
 
-/* Icon Links styling */
+.site-nav-links a {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.site-nav-links a:hover {
+    color: var(--accent);
+    background-color: var(--accent-wash);
+    text-decoration: none;
+}
+
+#theme-toggle {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--accent-wash);
+    border-color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+
+main {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.section-note {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-top: -0.5em;
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 40px;
+    align-items: start;
+    padding-top: 56px;
+}
+
+.hero-media {
+    position: sticky;
+    top: 90px;
+}
+
+.profile-pic {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
 .icon-links {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
 }
 
 .icon-links a {
-    color: #d4a5a5;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+    color: var(--text-muted);
+    border-radius: 8px;
+    transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 .icon-links a:hover {
-    color: #a3c1d1;
+    color: var(--accent);
+    background-color: var(--accent-wash);
+    text-decoration: none;
 }
 
-/* Profile Picture Styles */
-.profile-pic {
-    width: 120px;
-    height: auto;
-    border-radius: 5px;
-    border: 2px solid #d4a5a5;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
-    object-fit: cover;
-    margin-bottom: 15px;
+/* Grid items default to min-width:auto, which lets long words push the
+   column wider than the viewport. */
+.hero-text,
+.news-body {
+    min-width: 0;
 }
 
-.profile-pic:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75);
+.hero-text h1 {
+    margin-bottom: 0.15em;
 }
 
-/* Section Container Styles */
-.intro, #research, #publications, #contact, .news-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: var(--section-bg-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+.tagline {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 1.4em;
 }
 
-/* Publication Styles */
-.publications-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
-    margin-bottom: 20px;
+/* --------------------------------------------------------------------------
+   News
+   -------------------------------------------------------------------------- */
+
+.news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.news-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-top: 0.28em;
+    white-space: nowrap;
+}
+
+.news-body {
+    font-size: 0.96rem;
+}
+
+/* Hidden until the visitor expands the list; without JS everything shows. */
+.news-list.is-collapsed .news-item-extra {
+    display: none;
+}
+
+.news-list.is-expanded .news-item-extra {
+    display: grid;
+}
+
+.text-button {
+    margin-top: 14px;
+    padding: 0;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.text-button:hover {
+    color: var(--accent-strong);
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Publications
+   -------------------------------------------------------------------------- */
+
+.pub-group {
+    margin-top: 30px;
+}
+
+.pub-year {
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border);
 }
 
 .publication {
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 800px;
-    gap: 24px;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid transparent;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 22px;
+    align-items: start;
+    padding: 14px 14px 14px 0;
+    border-radius: var(--radius);
+    transition: background-color 0.15s ease;
 }
 
 .publication:hover {
-    background-color: rgba(212, 165, 165, 0.06);
-    border-color: var(--border-color);
+    background-color: var(--accent-wash);
 }
 
-.publication:hover .publication-img img {
-    transform: scale(1.03);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-}
-
-/* Uniform publication thumbnails so every row aligns */
 .publication-img {
-    flex: 0 0 240px;
-    width: 240px;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .publication-img img {
     display: block;
     width: 100%;
-    height: 160px;
+    height: 140px;
     object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    background-color: var(--background-color);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: transform 0.25s ease;
+}
+
+.publication:hover .publication-img img {
+    transform: scale(1.03);
 }
 
 .publication-details {
-    text-align: left;
-    flex-grow: 1;
     min-width: 0;
-    overflow: hidden;
 }
 
 .publication-title {
-    font-size: 1.2em;
-    font-weight: 600;
-    line-height: 1.3;
-    color: var(--link-color);
-    margin-bottom: 10px;
+    font-size: 1.03rem;
+    line-height: 1.35;
+    margin-bottom: 6px;
 }
 
-.publication-title-link:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
+.publication-title a {
+    color: var(--text);
+}
+
+.publication-title a:hover {
+    color: var(--accent);
+    text-decoration: none;
 }
 
 .publication-authors {
-    color: var(--text-color);
-    font-size: 0.95em;
-    margin-bottom: 4px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+}
+
+/* Own name, highlighted the way it is on most academic pages. */
+.publication-authors .me {
+    color: var(--text);
+    font-weight: 600;
 }
 
 .publication-conference {
-    color: var(--text-color);
-    opacity: 0.75;
-    font-size: 0.9em;
-    font-style: italic;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
     margin-bottom: 0;
 }
 
 .publication-links {
-    margin-top: 12px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
+    margin-top: 11px;
 }
 
 .publication-link {
-    color: var(--link-color);
-    text-decoration: none;
-    font-size: 0.85em;
-    padding: 3px 10px;
-    border: 1px solid var(--border-color);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--text-muted);
+    padding: 2px 10px;
+    border: 1px solid var(--border);
     border-radius: 999px;
-    line-height: 1.4;
-    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+    transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .publication-link:hover {
-    color: var(--link-hover-color);
-    border-color: var(--link-hover-color);
-    background-color: rgba(163, 193, 209, 0.08);
+    color: var(--accent);
+    border-color: var(--accent);
+    background-color: var(--accent-wash);
     text-decoration: none;
 }
 
-/* News Section */
-.news-section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: var(--section-bg-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
-    color: var(--text-color);
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 28px 24px 44px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
-.news-section h2 {
-    font-size: 1.6em;
-    line-height: 1.3;
-    text-align: center;
-    color: var(--link-color);
-    margin-bottom: 15px;
-}
-
-/* Scrollable News Box */
-.news-scroll-box {
-    height: 200px;
-    overflow-y: auto;
-    background-color: var(--background-color);
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-}
-
-/* News Items */
-.news-scroll-box ul {
-    list-style-type: none;
-    padding: 0;
+.site-footer p {
     margin: 0;
 }
 
-.news-scroll-box li {
-    font-size: 1em;
-    color: var(--text-color);
-    padding: 8px 0;
-    line-height: 1.5;
-    letter-spacing: 0.3px;
-    border-bottom: 1px solid var(--border-color);
-}
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
 
-.news-scroll-box li:last-child {
-    border-bottom: none;
-}
-
-/* News Item Links */
-.news-link {
-    color: var(--link-color);
-    text-decoration: none;
-}
-
-.news-link:hover {
-    color: var(--link-hover-color);
-    text-decoration: underline;
-}
-
-/* Date Styling */
-.news-date {
-    font-weight: bold;
-    color: var(--news-date-color);
-    margin-right: 5px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+@media (max-width: 760px) {
+    body {
+        font-size: 16px;
     }
 
-    .profile-container {
-        flex-direction: column;
-        align-items: center;
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.4rem; }
+
+    .site-nav-inner {
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        padding: 10px 18px;
     }
 
-    .profile-pic {
-        max-width: 100%;
-        max-height: 100%;
+    .site-nav-links {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+        gap: 2px;
     }
 
-    .intro-text {
+    .site-nav-links a {
+        padding: 4px 8px;
+        font-size: 0.82rem;
+    }
+
+    #theme-toggle {
+        margin-left: auto;
+    }
+
+    main {
+        padding: 0 18px;
+    }
+
+    section {
+        padding: 32px 0;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding-top: 34px;
+    }
+
+    /* Centre the photo only. Centring the whole grid via justify-items makes
+       every item size to its content, which overflows the viewport. */
+    .hero-media {
+        position: static;
+        justify-self: center;
+        width: 200px;
+    }
+
+    .hero-text {
+        text-align: left;
+    }
+
+    .hero-text h1 {
         text-align: center;
+    }
+
+    .tagline {
+        text-align: center;
+    }
+
+    .news-item {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .news-date {
+        padding-top: 0;
     }
 
     .publication {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 14px 0;
     }
 
     .publication-img {
-        flex: none;
-        width: 100%;
-        max-width: 360px;
+        max-width: 100%;
     }
 
     .publication-img img {
-        height: auto; /* Maintain aspect ratio on small screens */
+        height: auto;
         aspect-ratio: 3 / 2;
     }
 
-    .publication-details {
-        text-align: center;
-    }
-
-    .publication-links {
-        justify-content: center;
+    .site-footer {
+        padding: 24px 18px 36px;
     }
 }
 
-#theme-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #d4a5a5;
-    transition: color 0.3s ease;
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
-#theme-toggle:hover {
-    color: #a3c1d1;
-}
+@media print {
+    .site-nav,
+    .text-button,
+    .skip-link {
+        display: none;
+    }
 
-.light-theme #theme-toggle #theme-icon {
-    content: "☀️";
-}
-
-#theme-toggle #theme-icon {
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
+    .news-list.is-collapsed .news-item-extra {
+        display: grid;
+    }
 }
