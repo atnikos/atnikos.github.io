@@ -239,7 +239,7 @@ section:last-of-type {
 
 .hero {
     display: grid;
-    grid-template-columns: 190px 1fr;
+    grid-template-columns: 160px 1fr;
     gap: 40px;
     align-items: start;
     padding-top: 56px;
@@ -263,7 +263,7 @@ section:last-of-type {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 3px;
     list-style: none;
     margin: 16px 0 0;
     padding: 0;
@@ -273,9 +273,9 @@ section:last-of-type {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    font-size: 17px;
+    width: 29px;
+    height: 29px;
+    font-size: 16px;
     color: var(--text-muted);
     border-radius: 8px;
     transition: color 0.15s ease, background-color 0.15s ease;
@@ -556,7 +556,7 @@ section:last-of-type {
     .hero-media {
         position: static;
         justify-self: center;
-        width: 200px;
+        width: 170px;
     }
 
     .hero-text {
